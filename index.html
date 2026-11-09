@@ -122,7 +122,8 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .adv.on{border-color:var(--lime)}
 .snd{position:absolute;right:10px;bottom:10px;width:36px;height:36px;border-radius:50%;border:0;background:#07070cb0;color:#fff;font-size:15px;cursor:pointer;backdrop-filter:blur(8px)}
 .dur{position:absolute;left:10px;top:10px;font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 8px;border-radius:99px;background:#07070cb0;backdrop-filter:blur(8px)}
-.adm{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;font-size:12px;letter-spacing:.16em}
+.adm{display:flex;flex-wrap:wrap;gap:4px 8px;justify-content:space-between;align-items:baseline;margin-top:12px;font-size:12px;letter-spacing:.16em}
+.adm .dur{position:static;background:none;backdrop-filter:none;padding:0;margin-right:8px;color:var(--lime);font-size:inherit}
 .adm b{font-weight:900}.adm span{color:var(--mute);letter-spacing:.08em}
 .adf{font-size:14px;font-weight:700;margin-top:4px;color:var(--lime)}
 .adh{font-size:13px;color:var(--mute);margin-top:4px;line-height:1.4}
@@ -614,13 +615,14 @@ footer .credits{max-width:900px;margin:10px auto 0;font-size:11px;line-height:1.
 // Encendido por defecto. El navegador solo deja sonar tras el primer clic, toque o tecla: desde ahí todo es automático.
 // Los demás sonidos de cada sección solo ocurren mientras esa sección está en pantalla.
 const SND={on:true, unlocked:false, bed:null, duck:false, last:0, vol:0};
-function sfx(name,vol=.2,rate=1){ if(!SND.on||!SND.unlocked) return; const a=new Audio('sfx/'+name+'.mp3'); a.volume=Math.min(1,vol); a.preservesPitch=false; a.mozPreservesPitch=false; a.webkitPreservesPitch=false; a.playbackRate=rate; a.play().catch(()=>{}); }
+function sfx(name,vol=.2,rate=1){ if(!SND.on||!SND.unlocked||SND.duck) return; const a=new Audio('sfx/'+name+'.mp3'); a.volume=Math.min(1,vol); a.preservesPitch=false; a.mozPreservesPitch=false; a.webkitPreservesPitch=false; a.playbackRate=rate; a.play().catch(()=>{}); }
 function unlock(){ SND.unlocked=true; }
 ['pointerdown','keydown','touchend'].forEach(ev=>addEventListener(ev,unlock,{once:true,capture:true}));
 // los tonos ahora son golpes de madera reales a distintas alturas
 function pluck(fs,vol=.05,gap=.07){ if(!SND.on||!SND.unlocked) return; fs.forEach((f,k)=>setTimeout(()=>sfx('tap',Math.min(.2,vol*3.2),Math.max(.6,Math.min(2.2,f/432))),k*gap*1000)); }
 function blip(f=432,vol=.05){ pluck([f],vol); }
-document.addEventListener('volumechange',e=>{ if(e.target.tagName!=='VIDEO') return; SND.duck=[...document.querySelectorAll('video')].some(v=>!v.muted&&!v.paused);  },true);
+function muteOthers(v){ document.querySelectorAll('video').forEach(o=>{ if(o!==v&&!o.muted){ o.muted=true; const box=o.parentElement; box.classList.remove('on'); const b=box.querySelector('.snd,.snd2'); if(b) b.textContent='🔇'; } }); }
+document.addEventListener('volumechange',e=>{ if(e.target.tagName!=='VIDEO') return; if(!e.target.muted) muteOthers(e.target); SND.duck=[...document.querySelectorAll('video')].some(v=>!v.muted&&!v.paused);  },true);
 document.addEventListener('pause',e=>{ if(e.target.tagName!=='VIDEO') return; SND.duck=[...document.querySelectorAll('video')].some(v=>!v.muted&&!v.paused);  },true);
 
 // (anillo 3D retirado)
@@ -772,7 +774,7 @@ if(live){ const hide=()=>document.getElementById('hint').classList.add('gone'); 
 // ===== video del reel: tocar para sonido =====
 document.querySelectorAll('.screen').forEach(sc=>{const v=sc.querySelector('video'),b=sc.querySelector('.snd2');
   sc.addEventListener('click',()=>{v.muted=!v.muted; if(!v.muted){v.currentTime=0;} v.play().catch(()=>{}); b.textContent=v.muted?'🔇':'🔊';});});
-const autoIO=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target; if(e.isIntersecting) v.play().catch(()=>{}); else v.pause();}),{threshold:.3});
+const autoIO=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target; if(e.isIntersecting) v.play().catch(()=>{}); else { v.pause(); if(!v.muted){ v.muted=true; const b=v.parentElement.querySelector('.snd2'); if(b) b.textContent='🔇'; } } }),{threshold:.3});
 document.querySelectorAll('video[data-auto], .phone video').forEach(v=>autoIO.observe(v));
 
 // ===== transición entre secciones + todo lo ligado al scroll =====
@@ -814,15 +816,9 @@ slamTxt(); onScroll(); bandsLoop();
 
 // ===== celular: versiones ligeras de los videos =====
 const MOVIL=innerWidth<700;
+document.querySelectorAll('.adv .dur').forEach(d=>{ const m=d.closest('.ad')&&d.closest('.ad').querySelector('.adm span'); if(m) m.prepend(d); });
 if(MOVIL){ document.querySelectorAll('video[data-src]').forEach(v=>v.dataset.src=v.dataset.src.replace('ads/','ads/m/'));
   document.querySelectorAll('video[src^="ads/"]').forEach(v=>v.setAttribute('src',v.getAttribute('src').replace('ads/','ads/m/'))); }
-// ===== prueba de gancho: mismos controles que la cuadrícula =====
-(function(){ const vids=[...document.querySelectorAll('.s-hook .adv video')];
-  const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target; if(e.isIntersecting){ if(!v.src) v.src=v.dataset.src; v.play().catch(()=>{}); } else v.pause();}),{threshold:.35});
-  vids.forEach(v=>{io.observe(v); v.addEventListener('playing',()=>v.parentElement.classList.add('playing'));});
-  document.querySelectorAll('.s-hook .adv').forEach(box=>box.addEventListener('click',()=>{ const v=box.querySelector('video'), on=v.muted;
-    document.querySelectorAll('video').forEach(o=>{ if(!o.muted){o.muted=true; const b=o.parentElement.querySelector('.snd,.snd2'); if(b) b.textContent='🔇';} });
-    if(on){ v.muted=false; v.currentTime=0; v.play().catch(()=>{}); box.querySelector('.snd').textContent='🔊'; } })); })();
 // ===== contadores =====
 const cio=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; cio.unobserve(e.target);
   const b=e.target.querySelector('b'), to=+b.dataset.to, dec=+(b.dataset.dec||0), t0=performance.now();
@@ -870,7 +866,7 @@ kslamAll();
       const dir=MOVIL?'ads/m/':'ads/'; a.classList.remove('playing');
       im.src='ads/'+n+f+'.jpg'; v.dataset.src=dir+n+f+'.mp4';
       if(v.src){ v.muted=true; a.querySelector('.snd').textContent='🔇'; v.src=v.dataset.src; v.play().catch(()=>{}); }
-      const d=a.querySelector('.dur'); if(d){ d.dataset.orig=d.dataset.orig||d.textContent; d.textContent=f==='-6s'?({'v1':'0:08','v2':'0:06','v3':'0:08','v4':'0:08','v5':'0:06','k1':'0:07','k2':'0:06','k3':'0:06','k4':'0:07','k5':'0:05','k6':'0:06','k6es':'0:06','v2es':'0:04'}[n]||'0:06'):d.dataset.orig; } }); }); })();
+      const d=a.closest('.ad').querySelector('.dur'); if(d){ d.dataset.orig=d.dataset.orig||d.textContent; d.textContent=f==='-6s'?({'v1':'0:08','v2':'0:06','v3':'0:08','v4':'0:08','v5':'0:06','k1':'0:07','k2':'0:06','k3':'0:06','k4':'0:07','k5':'0:05','k6':'0:06','k6es':'0:06','v2es':'0:04'}[n]||'0:06'):d.dataset.orig; } }); }); })();
 
 // avatar de HeyGen: se carga el reproductor de HeyGen solo al tocar (no pesa al abrir la página)
 (function(){ const box=document.getElementById('hg'); if(!box) return;
@@ -881,7 +877,7 @@ kslamAll();
 // botón de sonido en la barra
 
 // toque suave al pasar por un anuncio o un formato
-document.querySelectorAll('.adv').forEach(a=>a.addEventListener('mouseenter',()=>{ const n=performance.now(); if(n-SND.last<140) return; SND.last=n; sfx('tap',.06,1.35); }));
+if(matchMedia('(hover:hover)').matches) document.querySelectorAll('.adv').forEach(a=>a.addEventListener('mouseenter',()=>{ const n=performance.now(); if(n-SND.last<140) return; SND.last=n; sfx('tap',.06,1.35); }));
 document.querySelectorAll('.fmt button,.olang button').forEach(b=>b.addEventListener('click',()=>sfx('tap',.14,1.15)));
 // los contadores suenan al empezar a subir
 (function(){ const st=[...document.querySelectorAll('.stat')]; const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; io.unobserve(e.target); const k=st.indexOf(e.target); setTimeout(()=>sfx('tap',.1,1+k*.12),k*90); }),{threshold:.5}); st.forEach(x=>io.observe(x)); })();
