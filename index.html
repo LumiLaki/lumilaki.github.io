@@ -329,13 +329,16 @@ footer .credits{max-width:900px;margin:10px auto 0;font-size:11px;line-height:1.
 video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-webkit-media-controls-panel,video::-webkit-media-controls-overlay-play-button,video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none;opacity:0}
 .adv video,.screen video,.phone video{pointer-events:none}
 .phone{cursor:pointer}
-#lb{position:fixed;inset:0;z-index:9999;background:#000;display:flex;align-items:center;justify-content:center}
+#lb{position:fixed;inset:0;z-index:9999;background:#05050ae6;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transition:opacity .35s}
+#lb.open{opacity:1}
 #lb[hidden]{display:none}
-#lb video{width:100%;height:100%;object-fit:contain;background:#000}
-#lbx{position:fixed;top:max(16px,env(safe-area-inset-top));right:16px;width:46px;height:46px;border-radius:50%;border:0;background:#ffffff26;color:#fff;font-size:20px;cursor:pointer;backdrop-filter:blur(8px)}
-#lbbar{position:fixed;left:18px;right:18px;bottom:max(20px,env(safe-area-inset-bottom));height:3px;border-radius:3px;background:#ffffff33;overflow:hidden}
+.lbw{position:fixed;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 30px 90px #000,0 0 0 1px #ffffff22,0 0 80px #c6ff3d22;transform-origin:0 0;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-radius .45s;will-change:transform}
+.lbw img,.lbw video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.lbw video{opacity:0;transition:opacity .35s}.lbw video.ok{opacity:1}
+#lbx{position:fixed;top:max(16px,env(safe-area-inset-top));right:16px;width:46px;height:46px;border-radius:50%;border:0;background:#ffffff26;color:#fff;font-size:20px;cursor:pointer}
+#lbbar{position:absolute;left:14px;right:14px;bottom:12px;height:3px;border-radius:3px;background:#ffffff33;overflow:hidden}
 #lbbar i{display:block;height:100%;width:0;background:var(--lime)}
-#lbp{position:fixed;inset:0;margin:auto;width:76px;height:76px;border-radius:50%;background:#0009;color:#fff;font-size:30px;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .25s}
+#lbp{position:absolute;inset:0;margin:auto;width:70px;height:70px;border-radius:50%;background:#0009;color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .25s}
 #lb.paused #lbp{opacity:1}
 </style>
 </head>
@@ -346,7 +349,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 <nav><div class="logo">LUMI <b>LAKI</b></div><span class="navr"><button id="lang">ES</button></span></nav>
 
 <header class="hero" id="top">
-  <div class="wall" aria-hidden="true"><div class="wall-in" id="wall"><div class="col" style="--d:38s;--dir:normal"><img src="ads/k6.jpg" alt="" loading="eager"><img src="ads/v1.jpg" alt="" loading="eager"><img src="ads/k2.jpg" alt="" loading="eager"><img src="ads/v2.jpg" alt="" loading="eager"><img src="ads/k4.jpg" alt="" loading="eager"><img src="ads/k6.jpg" alt="" loading="eager"><img src="ads/v1.jpg" alt="" loading="eager"><img src="ads/k2.jpg" alt="" loading="eager"><img src="ads/v2.jpg" alt="" loading="eager"><img src="ads/k4.jpg" alt="" loading="eager"></div><div class="col" style="--d:45s;--dir:reverse"><img src="ads/v4.jpg" alt="" loading="eager"><img src="ads/k3.jpg" alt="" loading="eager"><img src="ads/v3.jpg" alt="" loading="eager"><img src="ads/k5.jpg" alt="" loading="eager"><img src="ads/v5.jpg" alt="" loading="eager"><img src="ads/v4.jpg" alt="" loading="eager"><img src="ads/k3.jpg" alt="" loading="eager"><img src="ads/v3.jpg" alt="" loading="eager"><img src="ads/k5.jpg" alt="" loading="eager"><img src="ads/v5.jpg" alt="" loading="eager"></div><div class="col" style="--d:52s;--dir:normal"><img src="ads/k1.jpg" alt="" loading="eager"><img src="ads/casa-olivo.jpg" alt="" loading="eager"><img src="ads/k6.jpg" alt="" loading="eager"><img src="ads/v2.jpg" alt="" loading="eager"><img src="ads/k3.jpg" alt="" loading="eager"><img src="ads/k1.jpg" alt="" loading="eager"><img src="ads/casa-olivo.jpg" alt="" loading="eager"><img src="ads/k6.jpg" alt="" loading="eager"><img src="ads/v2.jpg" alt="" loading="eager"><img src="ads/k3.jpg" alt="" loading="eager"></div><div class="col" style="--d:59s;--dir:reverse"><img src="ads/v3.jpg" alt="" loading="eager"><img src="ads/k4.jpg" alt="" loading="eager"><img src="ads/v1.jpg" alt="" loading="eager"><img src="ads/k5.jpg" alt="" loading="eager"><img src="ads/v4.jpg" alt="" loading="eager"><img src="ads/v3.jpg" alt="" loading="eager"><img src="ads/k4.jpg" alt="" loading="eager"><img src="ads/v1.jpg" alt="" loading="eager"><img src="ads/k5.jpg" alt="" loading="eager"><img src="ads/v4.jpg" alt="" loading="eager"></div><div class="col" style="--d:66s;--dir:normal"><img src="ads/k2.jpg" alt="" loading="eager"><img src="ads/v5.jpg" alt="" loading="eager"><img src="ads/k1.jpg" alt="" loading="eager"><img src="ads/casa-olivo.jpg" alt="" loading="eager"><img src="ads/v3.jpg" alt="" loading="eager"><img src="ads/k2.jpg" alt="" loading="eager"><img src="ads/v5.jpg" alt="" loading="eager"><img src="ads/k1.jpg" alt="" loading="eager"><img src="ads/casa-olivo.jpg" alt="" loading="eager"><img src="ads/v3.jpg" alt="" loading="eager"></div><div class="col" style="--d:73s;--dir:reverse"><img src="ads/k5.jpg" alt="" loading="eager"><img src="ads/v2.jpg" alt="" loading="eager"><img src="ads/k6.jpg" alt="" loading="eager"><img src="ads/v4.jpg" alt="" loading="eager"><img src="ads/k1.jpg" alt="" loading="eager"><img src="ads/k5.jpg" alt="" loading="eager"><img src="ads/v2.jpg" alt="" loading="eager"><img src="ads/k6.jpg" alt="" loading="eager"><img src="ads/v4.jpg" alt="" loading="eager"><img src="ads/k1.jpg" alt="" loading="eager"></div></div></div>
+  <div class="wall" aria-hidden="true"><div class="wall-in" id="wall"><div class="col" style="--d:38s;--dir:normal"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v1.jpg" alt="" loading="eager"><img src="ads/t/k2.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k4.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v1.jpg" alt="" loading="eager"><img src="ads/t/k2.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k4.jpg" alt="" loading="eager"></div><div class="col" style="--d:45s;--dir:reverse"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/k3.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v5.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/k3.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v5.jpg" alt="" loading="eager"></div><div class="col" style="--d:52s;--dir:normal"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/casa-olivo.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k3.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/casa-olivo.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k3.jpg" alt="" loading="eager"></div><div class="col" style="--d:59s;--dir:reverse"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k4.jpg" alt="" loading="eager"><img src="ads/t/v1.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k4.jpg" alt="" loading="eager"><img src="ads/t/v1.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"></div><div class="col" style="--d:66s;--dir:normal"><img src="ads/t/k2.jpg" alt="" loading="eager"><img src="ads/t/v5.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/casa-olivo.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k2.jpg" alt="" loading="eager"><img src="ads/t/v5.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/casa-olivo.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"></div><div class="col" style="--d:73s;--dir:reverse"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"></div></div></div>
   <div class="hero-shade"></div>
   <div class="hero-txt">
     <p class="kick" data-en="LUMI LAKI · AI VIDEO CREATOR" data-es="LUMI LAKI · CREADOR DE VIDEO CON IA">LUMI LAKI · AI VIDEO CREATOR</p>
@@ -374,91 +377,91 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
     <div class="fmt" id="fmt"><span data-en="Format" data-es="Formato">Format</span><button type="button" class="on" data-f="">9:16</button><button type="button" data-f="-4x5">4:5</button><button type="button" data-f="-1x1">1:1</button><button type="button" data-f="-6s">6 s</button></div>
     <div class="grid-ads" id="grid">
     <article class="ad big reveal" style="transition-delay:0.00s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k6.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k6.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="Beat edit · bold claim hook · 13 s" data-es="Edición al ritmo · gancho de afirmación · 13 s">Beat edit · bold claim hook · 13 s</p>
       <p class="adh">“Stop drinking plain water after training.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6es.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k6es.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k6es.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:11</span></div>
       <div class="adm"><b>KINETA</b><span>ES · Eric</span></div>
       <p class="adf" data-en="Beat edit · bold claim hook · 11 s" data-es="Edición al ritmo · gancho de afirmación · 11 s">Beat edit · bold claim hook · 11 s</p>
       <p class="adh">“Deja de tomar solo agua después de entrenar.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v1.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v1.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v1.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v1.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:16</span></div>
       <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
       <p class="adf" data-en="ASMR · sound first hook · 16 s" data-es="ASMR · gancho de sonido · 16 s">ASMR · sound first hook · 16 s</p>
       <p class="adh">“Hear that? That&#x27;s your whole glow routine, in one jar.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.16s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Laura</span></div>
       <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
       <p class="adh">“Plain water. After a ninety minute workout?”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.24s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v2.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
       <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
       <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
       <p class="adh">“Four pills. Every single morning?”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2es.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v2es.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2es.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
       <div class="adm"><b>VELYRA</b><span>ES · Bella</span></div>
       <p class="adf" data-en="Kinetic type · question hook · 13 s" data-es="Tipografía animada · gancho con pregunta · 13 s">Kinetic type · question hook · 13 s</p>
       <p class="adh">“¿Cuatro pastillas cada mañana?”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.00s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k4.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k4.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k4.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k4.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Laura</span></div>
       <p class="adf" data-en="POV · relatable hook · 15 s" data-es="POV · gancho de identificación · 15 s">POV · relatable hook · 15 s</p>
       <p class="adh">“POV: it&#x27;s five a.m. and you actually feel ready.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v4.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v4.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v4.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v4.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
       <div class="adm"><b>VELYRA</b><span>ES · Jessica</span></div>
       <p class="adf" data-en="POV · relatable hook · 13 s" data-es="POV · gancho de identificación · 13 s">POV · relatable hook · 13 s</p>
       <p class="adh">“POV: tu rutina de brillo dura diez segundos.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.16s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k3.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k3.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k3.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k3.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="Morph · problem hook · 13 s" data-es="Transformación · gancho de problema · 13 s">Morph · problem hook · 13 s</p>
       <p class="adh">“Your sweat takes more than water with it.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.24s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v3.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v3.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v3.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v3.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
       <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
       <p class="adf" data-en="Morph · problem hook · 15 s" data-es="Transformación · gancho de problema · 15 s">Morph · problem hook · 15 s</p>
       <p class="adh">“Your skincare can&#x27;t reach what&#x27;s missing from the inside.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.00s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k5.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k5.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k5.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k5.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="Breakdown · ingredient hook · 14 s" data-es="Desglose · gancho de ingredientes · 14 s">Breakdown · ingredient hook · 14 s</p>
       <p class="adh">“What&#x27;s actually in one stick?”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v5.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v5.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v5.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v5.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
       <div class="adm"><b>VELYRA</b><span>EN · Laura</span></div>
       <p class="adf" data-en="Breakdown · ingredient hook · 15 s" data-es="Desglose · gancho de ingredientes · 15 s">Breakdown · ingredient hook · 15 s</p>
       <p class="adh">“Here&#x27;s exactly what&#x27;s inside one serving.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.16s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k1.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k1.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k1.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k1.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:16</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="ASMR · sound first hook · 16 s" data-es="ASMR · gancho de sonido · 16 s">ASMR · sound first hook · 16 s</p>
@@ -494,7 +497,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <a class="hg-link reveal d3" href="https://app.heygen.com/videos/kineta-avatar-321ba0e971fc4c0f853841848cdff069" target="_blank" rel="noopener" data-en="Watch on HeyGen ↗" data-es="Ver en HeyGen ↗">Watch on HeyGen ↗</a>
     </div>
     <div class="reveal d2">
-      <div class="hg" id="hg"><img src="ads/heygen.jpg" alt="HeyGen avatar ad for KINETA"><button class="hg-play" type="button" aria-label="Play">▶</button></div>
+      <div class="hg" id="hg"><img loading="lazy" decoding="async" src="ads/heygen.jpg" alt="HeyGen avatar ad for KINETA"><button class="hg-play" type="button" aria-label="Play">▶</button></div>
       <div class="phone-note" data-en="Tap to play · 28 s · HeyGen free plan" data-es="Toca para reproducir · 28 s · plan gratis de HeyGen">Tap to play · 28 s · HeyGen free plan</div>
     </div>
   </div>
@@ -522,37 +525,37 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
     <div class="var-grid">
       <article class="ad vcard reveal" style="transition-delay:0.00s">
         <span class="chg" data-en="ORIGINAL" data-es="ORIGINAL">ORIGINAL</span>
-        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK A</b><span>Laura · EN</span></div>
         <p class="adf" data-en="Question" data-es="Pregunta">Question</p><p class="adh">“Plain water. After a ninety minute workout?”</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.08s">
         <span class="chg" data-en="NEW HOOK" data-es="GANCHO NUEVO">NEW HOOK</span>
-        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2b.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2b.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2b.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2b.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK B</b><span>Laura · EN</span></div>
         <p class="adf" data-en="Bold claim" data-es="Afirmación">Bold claim</p><p class="adh">“Water alone won't fix it.”</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.16s">
         <span class="chg" data-en="NEW HOOK" data-es="GANCHO NUEVO">NEW HOOK</span>
-        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2c.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2c.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2c.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2c.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK C</b><span>Liam · EN</span></div>
         <p class="adf" data-en="POV" data-es="POV">POV</p><p class="adh">“POV: you just finished leg day.”</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.24s">
         <span class="chg" data-en="NEW VOICE + LANGUAGE" data-es="VOZ E IDIOMA">NEW VOICE + LANGUAGE</span>
-        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2es.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2es.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2es.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK A</b><span>Eric · ES</span></div>
         <p class="adf" data-en="Spanish" data-es="Español">Spanish</p><p class="adh">“Agua sola. ¿Después de noventa minutos de entrenamiento?”</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.32s">
         <span class="chg" data-en="NEW FORMAT" data-es="FORMATO NUEVO">NEW FORMAT</span>
-        <div class="adv r45"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2-4x5.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2-4x5.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">4:5</span></div>
+        <div class="adv r45"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2-4x5.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2-4x5.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">4:5</span></div>
         <div class="adm"><b>HOOK A</b><span>Laura · EN</span></div>
         <p class="adf" data-en="Feed 4:5" data-es="Feed 4:5">Feed 4:5</p><p class="adh">Instagram and Facebook feed</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.40s">
         <span class="chg" data-en="NEW LENGTH" data-es="DURACIÓN NUEVA">NEW LENGTH</span>
-        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2-6s.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2-6s.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2-6s.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2-6s.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK A</b><span>Laura · EN</span></div>
         <p class="adf" data-en="Short cut, full sentences" data-es="Corte corto, frases completas">Short cut, full sentences</p><p class="adh">Hook + offer, for bumper slots</p>
       </article>
@@ -574,10 +577,10 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
     <div class="sec1" aria-hidden="true"><div class="sec1-bar"><i id="secfill"></i></div><b id="secnum">0.0s</b><span data-en="this is one second" data-es="esto es un segundo">this is one second</span></div>
     <p class="reveal d3" data-en="Most people decide in the first second whether to keep watching. Here is the same KINETA ad with a weak hook and with the hook I would ship. Tap either one for sound." data-es="La mayoría decide en el primer segundo si sigue mirando. Este es el mismo anuncio de KINETA con un gancho débil y con el gancho que yo entregaría. Toca cualquiera para oírlo.">Most people decide in the first second whether to keep watching. Here is the same KINETA ad with a weak hook and with the hook I would ship. Tap either one for sound.</p>
     <div class="vs">
-      <figure class="side weak reveal"><div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2w.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2w.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button></div>
+      <figure class="side weak reveal"><div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2w.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2w.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button></div>
         <figcaption><b data-en="✕ Weak · static, brand first" data-es="✕ Débil · fijo, la marca primero">✕ Weak · static, brand first</b><q>Introducing Kineta, an electrolyte drink mix.</q><span data-en="One still photo, the brand name first and a long caption. Nothing moves, nothing makes you stop." data-es="Una sola foto fija, la marca primero y un texto largo. Nada se mueve, nada te hace parar.">One still photo, the brand name first and a long caption. Nothing moves, nothing makes you stop.</span></figcaption></figure>
       <div class="vsb" aria-hidden="true">VS</div>
-      <figure class="side strong reveal d2"><div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button></div>
+      <figure class="side strong reveal d2"><div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button></div>
         <figcaption><b data-en="✓ Strong · pain first" data-es="✓ Fuerte · el problema primero">✓ Strong · pain first</b><q>Plain water. After a ninety minute workout?</q><span data-en="A question the viewer answers in their head, so they stay for the answer." data-es="Una pregunta que el espectador responde en su cabeza, así se queda por la respuesta.">A question the viewer answers in their head, so they stay for the answer.</span></figcaption></figure>
     </div>
   </div>
@@ -607,7 +610,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 </section>
 
 <section class="end reveal" id="end">
-  <div class="endstrip" aria-hidden="true"><div class="es-in"><img src="ads/k6.jpg" alt=""><img src="ads/v1.jpg" alt=""><img src="ads/k2.jpg" alt=""><img src="ads/v2.jpg" alt=""><img src="ads/k4.jpg" alt=""><img src="ads/v4.jpg" alt=""><img src="ads/k3.jpg" alt=""><img src="ads/v3.jpg" alt=""><img src="ads/k5.jpg" alt=""><img src="ads/v5.jpg" alt=""><img src="ads/k1.jpg" alt=""><img src="ads/casa-olivo.jpg" alt=""><img src="ads/k6.jpg" alt=""><img src="ads/v1.jpg" alt=""><img src="ads/k2.jpg" alt=""><img src="ads/v2.jpg" alt=""><img src="ads/k4.jpg" alt=""><img src="ads/v4.jpg" alt=""><img src="ads/k3.jpg" alt=""><img src="ads/v3.jpg" alt=""><img src="ads/k5.jpg" alt=""><img src="ads/v5.jpg" alt=""><img src="ads/k1.jpg" alt=""><img src="ads/casa-olivo.jpg" alt=""></div></div>
+  <div class="endstrip" aria-hidden="true"><div class="es-in"><img loading="lazy" decoding="async" src="ads/k6.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v1.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k2.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v2.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k4.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v4.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k3.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v3.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k5.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v5.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k1.jpg" alt=""><img loading="lazy" decoding="async" src="ads/casa-olivo.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k6.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v1.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k2.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v2.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k4.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v4.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k3.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v3.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k5.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v5.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k1.jpg" alt=""><img loading="lazy" decoding="async" src="ads/casa-olivo.jpg" alt=""></div></div>
   <div class="free reveal"><p class="free-h kslam" data-en="Built with code, local and free tools." data-es="Hecho con código y herramientas locales y gratuitas.">Built with code, local and free tools.</p>
     <p class="free-p" data-en="No paid video, design or editing software. Claude is my code partner. Plug in your paid stack and this pipeline scales from day one." data-es="Sin software de video, diseño ni edición de pago. Claude es mi compañero de código. Conecta tus herramientas de pago y este sistema escala desde el primer día.">No paid video, design or editing software. Claude is my code partner. Plug in your paid stack and this pipeline scales from day one.</p></div>
   <h2 id="endname" aria-label="Lumi Laki"><span class="el" style="--i:0">L</span><span class="el" style="--i:1">U</span><span class="el" style="--i:2">M</span><span class="el" style="--i:3">I</span><span class="el" style="--i:4">&nbsp;</span><span class="el" style="--i:5">L</span><span class="el" style="--i:6">A</span><span class="el" style="--i:7">K</span><span class="el" style="--i:8">I</span></h2>
@@ -715,7 +718,7 @@ addEventListener('load',()=>{sizeParticles();requestAnimationFrame(tick);setLang
   vids.forEach(v=>{vis.observe(v); v.addEventListener('playing',()=>v.parentElement.classList.add('playing')); v.addEventListener('pause',()=>v.parentElement.classList.remove('playing'));});
   function mute(v){ v.muted=true; v.parentElement.classList.remove('on'); v.parentElement.querySelector('.snd').textContent='🔇'; }
   document.querySelectorAll('.adv').forEach(box=>box.addEventListener('click',()=>{
-    const v=box.querySelector('video'); if(window.TOUCH){ openLB(v.dataset.src||v.getAttribute('src')); return; } if(!v.src) v.src=v.dataset.src;
+    const v=box.querySelector('video'); if(window.TOUCH){ openLB(v.dataset.src||v.getAttribute('src'),box); return; } if(!v.src) v.src=v.dataset.src;
     const on=v.muted;
     vids.forEach(o=>{ if(o!==v && !o.muted) mute(o); });
     if(on){ v.muted=false; v.currentTime=0; v.play().catch(()=>{}); box.classList.add('on'); box.querySelector('.snd').textContent='🔊'; }
@@ -784,7 +787,7 @@ addEventListener('message',e=>{ const d=e.data; if(d&&d.kineta==='scroll'){ scro
 if(live){ const hide=()=>document.getElementById('hint').classList.add('gone'); live.addEventListener('mouseenter',()=>setTimeout(hide,1800)); live.addEventListener('touchstart',hide,{passive:true}); live.querySelector('iframe').addEventListener('load',()=>{ try{ live.querySelector('iframe').contentWindow.addEventListener('scroll',hide,{once:true}); }catch(_){} }); }
 // ===== video del reel: tocar para sonido =====
 document.querySelectorAll('.screen,.phone').forEach(sc=>{const v=sc.querySelector('video'),b=sc.querySelector('.snd2');
-  sc.addEventListener('click',()=>{ if(window.TOUCH){ openLB(v.currentSrc||v.getAttribute('src')); return; } v.muted=!v.muted; if(!v.muted){v.currentTime=0;} v.play().catch(()=>{}); b.textContent=v.muted?'🔇':'🔊';});});
+  sc.addEventListener('click',()=>{ if(window.TOUCH){ openLB(v.currentSrc||v.getAttribute('src'),sc); return; } v.muted=!v.muted; if(!v.muted){v.currentTime=0;} v.play().catch(()=>{}); b.textContent=v.muted?'🔇':'🔊';});});
 const autoIO=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target; if(e.isIntersecting) v.play().catch(()=>{}); else { v.pause(); if(!v.muted){ v.muted=true; const b=v.parentElement.querySelector('.snd2'); if(b) b.textContent='🔇'; } } }),{threshold:.3});
 document.querySelectorAll('video[data-auto], .phone video').forEach(v=>autoIO.observe(v));
 
@@ -898,20 +901,31 @@ document.querySelectorAll('.fmt button,.olang button').forEach(b=>b.addEventList
   const t=document.getElementById('mailtxt'); if(t) t.textContent=m;
   document.querySelectorAll('.mailme').forEach(a=>a.setAttribute('href','mailto:'+m+'?subject=Project%20with%20Lumi%20Laki')); })();
 </script>
-<div id="lb" hidden><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" playsinline webkit-playsinline x5-playsinline loop></video><div id="lbp">▶</div><button id="lbx" type="button" aria-label="Close">✕</button><div id="lbbar"><i></i></div></div>
+<div id="lb" hidden><div class="lbw"><img alt=""><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" playsinline webkit-playsinline x5-playsinline loop></video><div id="lbp">▶</div><div id="lbbar"><i></i></div></div><button id="lbx" type="button" aria-label="Close">✕</button></div>
 <script>
-// visor grande: en celular, tocar un video lo abre completo, sin cortes y con sonido; atrás o ✕ lo cierra
-(function(){ const lb=document.getElementById('lb'), v=lb.querySelector('video'), bar=lb.querySelector('#lbbar i');
+// visor: en celular el video crece desde su tarjeta, vertical, entero y con sonido; atrás o ✕ lo regresa
+(function(){ const lb=document.getElementById('lb'), w=lb.querySelector('.lbw'), im=w.querySelector('img'), v=w.querySelector('video'), bar=w.querySelector('#lbbar i'); let from=null;
   window.TOUCH=!matchMedia('(hover:hover)').matches;
-  window.openLB=function(src){ if(!src) return; document.querySelectorAll('video').forEach(o=>{ if(o!==v){ if(!o.muted){ o.muted=true; const b=o.parentElement.querySelector('.snd,.snd2'); if(b) b.textContent='🔇'; o.parentElement.classList.remove('on'); } o.pause(); } });
-    v.src=src; v.muted=false; v.currentTime=0; lb.hidden=false; lb.classList.remove('paused'); document.body.style.overflow='hidden';
-    v.play().catch(()=>{ lb.classList.add('paused'); }); history.pushState({lb:1},''); };
-  function close(){ if(lb.hidden) return; v.pause(); v.removeAttribute('src'); v.load(); lb.hidden=true; document.body.style.overflow='';
-    document.querySelectorAll('.adv video[src], .screen video, .phone video').forEach(o=>{ const r=o.getBoundingClientRect(); if(r.bottom>0&&r.top<innerHeight){ o.muted=true; o.play().catch(()=>{}); } }); }
-  document.getElementById('lbx').addEventListener('click',e=>{ e.stopPropagation(); if(history.state&&history.state.lb) history.back(); else close(); });
+  const fit=r=>{ const ar=r.width/r.height, W=innerWidth*.92, H=innerHeight*.84; let ww=Math.min(W,H*ar), hh=ww/ar; return {x:(innerWidth-ww)/2,y:(innerHeight-hh)/2,w:ww,h:hh}; };
+  const tf=(a,b)=>`translate(${a.left-b.x}px,${a.top-b.y}px) scale(${a.width/b.w},${a.height/b.h})`;
+  window.openLB=function(src,box){ if(!src||!box) return; from=box;
+    document.querySelectorAll('video').forEach(o=>{ if(o!==v){ if(!o.muted){ o.muted=true; const b=o.parentElement.querySelector('.snd,.snd2'); if(b) b.textContent='🔇'; o.parentElement.classList.remove('on'); } o.pause(); } });
+    const r=box.getBoundingClientRect(), t=fit(r), pst=box.querySelector('.pst'), sv=box.querySelector('video');
+    im.src=(pst&&pst.src)||sv.poster||''; v.classList.remove('ok'); bar.style.width='0';
+    Object.assign(w.style,{left:t.x+'px',top:t.y+'px',width:t.w+'px',height:t.h+'px',transition:'none',transform:tf(r,t)});
+    lb.hidden=false; lb.classList.remove('paused'); document.body.style.overflow='hidden';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{ w.style.transition=''; w.style.transform='none'; lb.classList.add('open'); }));
+    v.src=src; v.muted=false; v.currentTime=0; v.play().catch(()=>lb.classList.add('paused')); history.pushState({lb:1},''); };
+  v.addEventListener('playing',()=>v.classList.add('ok'));
+  function close(){ if(lb.hidden) return; v.pause(); lb.classList.remove('open');
+    if(from){ const r=from.getBoundingClientRect(), t={x:parseFloat(w.style.left),y:parseFloat(w.style.top),w:parseFloat(w.style.width),h:parseFloat(w.style.height)}; w.style.transform=tf(r,t); }
+    setTimeout(()=>{ v.removeAttribute('src'); v.load(); lb.hidden=true; document.body.style.overflow='';
+      document.querySelectorAll('.adv video[src], .screen video, .phone video').forEach(o=>{ const q=o.getBoundingClientRect(); if(q.bottom>0&&q.top<innerHeight){ o.muted=true; o.play().catch(()=>{}); } }); },420); }
+  const back=e=>{ if(e) e.stopPropagation(); if(history.state&&history.state.lb) history.back(); else close(); };
+  document.getElementById('lbx').addEventListener('click',back);
   addEventListener('popstate',close);
-  addEventListener('keydown',e=>{ if(e.key==='Escape'&&!lb.hidden){ if(history.state&&history.state.lb) history.back(); else close(); } });
-  lb.addEventListener('click',()=>{ if(v.paused){ v.play().catch(()=>{}); lb.classList.remove('paused'); } else { v.pause(); lb.classList.add('paused'); } });
+  addEventListener('keydown',e=>{ if(e.key==='Escape'&&!lb.hidden) back(); });
+  lb.addEventListener('click',e=>{ if(!w.contains(e.target)){ back(e); return; } if(v.paused){ v.play().catch(()=>{}); lb.classList.remove('paused'); } else { v.pause(); lb.classList.add('paused'); } });
   v.addEventListener('timeupdate',()=>{ if(v.duration) bar.style.width=(v.currentTime/v.duration*100)+'%'; });
 })();
 </script>
