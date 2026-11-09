@@ -7,13 +7,13 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%2307070c%22/%3E%3Ctext x=%2232%22 y=%2244%22 font-family=%22Arial Black%22 font-size=%2232%22 text-anchor=%22middle%22 fill=%22%23c6ff3d%22%3ELL%3C/text%3E%3C/svg%3E">
 <meta name="description" content="Lumi Laki · AI video ads at scale: 13 spec ads, 6 styles, 4 formats, English and Spanish, batch rendered.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://lumilaki.github.io/">
 <meta property="og:title" content="Lumi Laki · AI Video Ads at Scale">
 <meta property="og:description" content="13 spec ads, 6 styles, 4 formats, English and Spanish. Average render time: 36 seconds per ad.">
 <meta property="og:image" content="https://lumilaki.github.io/og.jpg">
+<meta property="og:url" content="https://lumilaki.github.io/">
+<link rel="canonical" href="https://lumilaki.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://lumilaki.github.io/og.jpg">
-<meta name="description" content="AI video ads, faceless UGC, motion graphics and landing pages for brands.">
 <style>
 :root{--bg:#07070c;--ink:#f4f4f8;--mute:#a3a3b8;--lime:#c6ff3d;--violet:#8b5cf6;--cyan:#22d3ee;--coral:#ff5a5f;--blue:#3b5bff}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -277,14 +277,31 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .step.lit{transform:translateY(-10px) scale(1.03);border-color:var(--lime);box-shadow:0 18px 50px #c6ff3d22}
 .step.lit .n{color:var(--lime);text-shadow:0 0 24px #c6ff3d88}
 @media (max-width:800px){.flowline{left:50%;right:auto;top:4%;bottom:4%;width:2px;height:auto;background:repeating-linear-gradient(180deg,#c6ff3d55 0 10px,transparent 10px 20px)}.flowgrid.run .flowdot{animation:none;opacity:0}}
+.about{padding:120px 0;border-top:1px solid #ffffff12}
+.about .tag{background:var(--violet);color:#fff}
+.about-g{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start}
+.about .mono{width:132px;height:132px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:44px;letter-spacing:.04em;color:var(--lime);background:#0e0e16;border:1px solid #c6ff3d44;box-shadow:0 0 60px #8b5cf622}
+.about h2{font-size:clamp(34px,5vw,58px);font-weight:900;line-height:1.05;margin:10px 0 18px}.about h2 em{color:var(--lime);font-style:normal}
+.about .bio{font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#d9d9e4;max-width:720px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:30px 0;max-width:720px}
+.facts div{padding:14px 16px;border:1px solid #ffffff18;border-radius:14px;background:#0c0c13}
+.facts b{display:block;font-size:11px;letter-spacing:.2em;color:var(--mute);margin-bottom:6px}
+.facts span{font-size:15px}
+.alinks{display:flex;flex-wrap:wrap;gap:12px}
+.alink{display:inline-block;padding:13px 24px;border-radius:99px;border:1px solid #ffffff40;color:var(--ink);text-decoration:none;font-weight:700;font-size:15px;transition:border-color .2s,transform .2s}
+.alink:hover{border-color:var(--lime);transform:translateY(-2px)}
+.alink.pri{background:var(--lime);color:#0b0b10;border-color:var(--lime)}
+@media (max-width:700px){.about-g{grid-template-columns:1fr;gap:26px}.about .mono{width:96px;height:96px;font-size:32px}.facts{grid-template-columns:1fr}}
 /* pantalla de carga */
-#intro{position:fixed;inset:0;z-index:100;background:#07070c;display:grid;place-items:center;transition:opacity .8s ease,visibility 0s .8s}
-#intro.fuera{opacity:0;visibility:hidden;pointer-events:none}
-.in-logo{font-weight:900;font-size:clamp(36px,7vw,84px);letter-spacing:.14em;overflow:hidden;line-height:1.1}
-.in-logo span,.in-logo b{display:inline-block;animation:inUp .8s cubic-bezier(.2,.9,.2,1) both}.in-logo b{color:var(--lime);animation-delay:.12s}
-@keyframes inUp{from{transform:translateY(110%)}to{transform:none}}
-.in-bar{position:absolute;left:50%;top:calc(50% + clamp(40px,6vw,70px));width:min(240px,50vw);height:2px;margin-left:calc(min(240px,50vw)/-2);background:#ffffff18;overflow:hidden}
-.in-bar:after{content:"";position:absolute;inset:0;background:var(--lime);transform:scaleX(var(--p,0));transform-origin:0 50%;transition:transform .3s}
+#intro{position:fixed;inset:0;z-index:100;pointer-events:none;animation:introSale .5s ease 3.2s forwards}
+@keyframes introSale{to{opacity:0;visibility:hidden}}
+#intro .mit{position:absolute;left:0;right:0;height:50.5%;background:#07070c;transition:transform .75s cubic-bezier(.76,0,.24,1)}
+#intro .a{top:0}#intro .b{bottom:0}
+#intro .raya{position:absolute;left:0;right:0;top:50%;height:1px;margin-top:-.5px;background:#f2efe8;box-shadow:0 0 18px 2px rgba(242,239,232,.6);transform:scaleX(0);animation:raya .5s cubic-bezier(.65,0,.35,1) .05s forwards}
+@keyframes raya{to{transform:scaleX(1)}}
+#intro.fuera .a{transform:translateY(-100%)}#intro.fuera .b{transform:translateY(100%)}
+#intro.fuera .raya{opacity:0;transition:opacity .25s}
+@media (prefers-reduced-motion:reduce){#intro{display:none}}
 body:not(.ready) .slam .c,body:not(.ready) .kick,body:not(.ready) .sub,body:not(.ready) .hero-cta{animation-play-state:paused}
 .proc{margin:0 0 50px}.procv{margin-top:0;max-width:none;border-color:#c6ff3d44;box-shadow:0 30px 80px #000a,0 0 60px #8b5cf622}
 .proc figcaption{color:var(--mute);font-size:14px;margin-top:12px}
@@ -348,7 +365,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 </head>
 <body>
 
-<div id="intro" aria-hidden="true"><div class="in-logo"><span>LUMI</span> <b>LAKI</b></div><i class="in-bar"></i></div>
+<div id="intro" aria-hidden="true"><i class="mit a"></i><i class="mit b"></i><i class="raya"></i></div>
 <a class="hire mailme" id="hire" href="#contact" data-en="Hire me ↗" data-es="Contrátame ↗">Hire me ↗</a>
 <nav><div class="logo">LUMI <b>LAKI</b></div><span class="navr"><button id="lang">ES</button></span></nav>
 
@@ -613,6 +630,26 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
   </div>
 </section>
 
+<section class="about" id="about">
+  <div class="wrap about-g">
+    <div class="mono reveal" aria-hidden="true">LL</div>
+    <div>
+      <span class="tag reveal" data-en="ABOUT" data-es="SOBRE MÍ">ABOUT</span>
+      <h2 class="reveal d2" data-en="The eye behind <em>the ads</em>" data-es="La mirada detrás de <em>los anuncios</em>">The eye behind <em>the ads</em></h2>
+      <p class="bio reveal d3" data-en="I am Lumi Laki, an AI video creator based in Nicaragua. My eye comes from more than 15 years as a visual artist and photographer, with exhibitions in Nicaragua, Mexico, Japan and New York. Today I bring that eye to performance creative: strong hooks, tight pacing and clear offers, rendered in batches so a media buyer always has fresh ads to test." data-es="Soy Lumi Laki, creador de video con IA desde Nicaragua. Mi mirada viene de más de 15 años como artista visual y fotógrafo, con exposiciones en Nicaragua, México, Japón y Nueva York. Hoy llevo esa mirada a los anuncios de rendimiento: ganchos fuertes, ritmo preciso y ofertas claras, hechos en tanda para que siempre haya anuncios nuevos que probar.">I am Lumi Laki, an AI video creator based in Nicaragua. My eye comes from more than 15 years as a visual artist and photographer, with exhibitions in Nicaragua, Mexico, Japan and New York. Today I bring that eye to performance creative: strong hooks, tight pacing and clear offers, rendered in batches so a media buyer always has fresh ads to test.</p>
+      <div class="facts reveal d3">
+        <div><b data-en="LOCATION" data-es="UBICACIÓN">LOCATION</b><span data-en="Nicaragua · fully remote" data-es="Nicaragua · 100% remoto">Nicaragua · fully remote</span></div>
+        <div><b data-en="HOURS" data-es="HORARIO">HOURS</b><span data-en="UTC−6 · works US Eastern hours" data-es="UTC−6 · trabajo en horario del este de EE. UU.">UTC−6 · works US Eastern hours</span></div>
+        <div><b data-en="AVAILABILITY" data-es="DISPONIBILIDAD">AVAILABILITY</b><span data-en="Open to new projects now" data-es="Disponible para proyectos ahora">Open to new projects now</span></div>
+        <div><b data-en="LANGUAGES" data-es="IDIOMAS">LANGUAGES</b><span data-en="Spanish native · English advanced" data-es="Español nativo · inglés avanzado">Spanish native · English advanced</span></div>
+      </div>
+      <div class="alinks reveal d3">
+        <a class="alink pri mailme" href="#contact" data-en="Email me" data-es="Escríbeme">Email me</a>
+        <a class="alink" href="https://www.linkedin.com/in/juanvindel1" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="end reveal" id="end">
   <div class="endstrip" aria-hidden="true"><div class="es-in"><img loading="lazy" decoding="async" src="ads/k6.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v1.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k2.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v2.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k4.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v4.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k3.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v3.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k5.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v5.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k1.jpg" alt=""><img loading="lazy" decoding="async" src="ads/casa-olivo.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k6.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v1.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k2.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v2.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k4.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v4.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k3.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v3.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k5.jpg" alt=""><img loading="lazy" decoding="async" src="ads/v5.jpg" alt=""><img loading="lazy" decoding="async" src="ads/k1.jpg" alt=""><img loading="lazy" decoding="async" src="ads/casa-olivo.jpg" alt=""></div></div>
   <div class="free reveal"><p class="free-h kslam" data-en="Built with code, local and free tools." data-es="Hecho con código y herramientas locales y gratuitas.">Built with code, local and free tools.</p>
@@ -623,6 +660,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
   <div class="pills"><span>UGC</span><span>Motion</span><span>Promo</span><span>Web</span><span>EN · ES</span></div>
   <a class="contact mailme" href="#contact" data-en="Let's work together" data-es="Trabajemos juntos">Let's work together</a>
   <div class="mail" id="mailtxt"></div>
+  <a class="alink" href="https://www.linkedin.com/in/juanvindel1" target="_blank" rel="noopener" style="margin-top:14px">LinkedIn ↗</a>
 </section>
 
 <footer><p>© 2026 Lumi Laki</p><p class="credits" data-en="Non commercial portfolio exhibition. VELYRA, KINETA, Casa Olivo, PURA, KAFI, VOLTA and Papayo are invented brands. Images: ChatGPT (OpenAI), FLUX.1 schnell (Apache 2.0). Video clip in the KINETA ads and demo: Kling AI free plan, watermark kept. Avatar: HeyGen free plan, embedded with its watermark. Voices: ElevenLabs free plan (elevenlabs.io). Music: Hero&#39;s Theme and Spooky Ride by Twin Musicom (CC BY 4.0), Volatile Reaction and Hyperfun by Kevin MacLeod, incompetech.com (CC BY 3.0). Sound effects: Pill bottle shake by Gravity Sound (CC BY 4.0), water drip by Knites (CC0), University of Iowa Electronic Music Studios. Fonts: SIL Open Font License. All audio tuned to 432 Hz. No cookies, no tracking, no data collected." data-es="Exhibición de portafolio sin fines comerciales. VELYRA, KINETA, Casa Olivo, PURA, KAFI, VOLTA y Papayo son marcas inventadas. Imágenes: ChatGPT (OpenAI), FLUX.1 schnell (Apache 2.0). Clip de video en los anuncios y la demo KINETA: plan gratis de Kling AI, con su marca de agua. Avatar: plan gratis de HeyGen, insertado con su marca de agua. Voces: plan gratis de ElevenLabs (elevenlabs.io). Música: Hero&#39;s Theme y Spooky Ride de Twin Musicom (CC BY 4.0), Volatile Reaction y Hyperfun de Kevin MacLeod, incompetech.com (CC BY 3.0). Efectos: Pill bottle shake de Gravity Sound (CC BY 4.0), gota de agua de Knites (CC0), University of Iowa Electronic Music Studios. Fuentes: SIL Open Font License. Todo el audio afinado a 432 Hz. Sin cookies, sin rastreo, sin datos de visitantes.">Non commercial portfolio exhibition. VELYRA, KINETA, Casa Olivo, PURA, KAFI, VOLTA and Papayo are invented brands. Images: ChatGPT (OpenAI), FLUX.1 schnell (Apache 2.0). Video clip in the KINETA ads and demo: Kling AI free plan, watermark kept. Avatar: HeyGen free plan, embedded with its watermark. Voices: ElevenLabs free plan (elevenlabs.io). Music: Hero&#39;s Theme and Spooky Ride by Twin Musicom (CC BY 4.0), Volatile Reaction and Hyperfun by Kevin MacLeod, incompetech.com (CC BY 3.0). Sound effects: Pill bottle shake by Gravity Sound (CC BY 4.0), water drip by Knites (CC0), University of Iowa Electronic Music Studios. Fonts: SIL Open Font License. All audio tuned to 432 Hz. No cookies, no tracking, no data collected.</p></footer>
@@ -822,15 +860,15 @@ function bandsLoop(){ offA-=1.2+Math.abs(vel)*.25; offB+=1.0+Math.abs(vel)*.22;
 addEventListener('scroll',onScroll,{passive:true});
 slamTxt(); onScroll(); bandsLoop();
 // carga: espera fuentes y las portadas del muro; mínimo 1,1 s, máximo 3 s; después arranca la portada
-(function(){ const intro=document.getElementById('intro'), bar=intro.querySelector('.in-bar'), t0=performance.now();
+(function(){ const intro=document.getElementById('intro'), t0=performance.now();
   const imgs=[...document.querySelectorAll('#wall img')].slice(0,30); let done=0;
-  const step=()=>{ done++; bar.style.setProperty('--p',Math.min(1,done/(imgs.length+1))); };
+  const step=()=>{ done++; };
   const waits=imgs.map(im=>(im.complete?Promise.resolve():new Promise(r=>{im.onload=im.onerror=r;})).then(step));
   waits.push((document.fonts?document.fonts.ready:Promise.resolve()).then(step));
-  let gone=false; const go=()=>{ if(gone) return; gone=true; bar.style.setProperty('--p',1);
-    setTimeout(()=>{ intro.classList.add('fuera'); document.body.classList.add('ready'); setTimeout(()=>nextSwap(true),500); setTimeout(()=>intro.remove(),1000); },250); };
-  Promise.all(waits).then(()=>setTimeout(go,Math.max(0,1100-(performance.now()-t0))));
-  setTimeout(go,3000); })();
+  let gone=false; const go=()=>{ if(gone) return; gone=true;
+    setTimeout(()=>{ intro.classList.add('fuera'); document.body.classList.add('ready'); setTimeout(()=>nextSwap(true),500); setTimeout(()=>intro.remove(),900); },0); };
+  Promise.all(waits).then(()=>setTimeout(go,Math.max(0,550-(performance.now()-t0))));
+  setTimeout(go,2800); })();
 
 // ===== celular: versiones ligeras de los videos =====
 const MOVIL=innerWidth<700;
