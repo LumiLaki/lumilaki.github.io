@@ -326,6 +326,17 @@ footer .credits{max-width:900px;margin:10px auto 0;font-size:11px;line-height:1.
 .reel,.steps{background:var(--bg)}
 @media (prefers-reduced-motion:reduce){.slam .c,.kick,.sub,.hero-cta{opacity:1!important}.swap .c{transform:none!important}.col{animation:none!important}}
 @media (max-width:800px){.bandx{font-size:20px}}
+video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-webkit-media-controls-panel,video::-webkit-media-controls-overlay-play-button,video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none;opacity:0}
+.adv video,.screen video,.phone video{pointer-events:none}
+.phone{cursor:pointer}
+#lb{position:fixed;inset:0;z-index:9999;background:#000;display:flex;align-items:center;justify-content:center}
+#lb[hidden]{display:none}
+#lb video{width:100%;height:100%;object-fit:contain;background:#000}
+#lbx{position:fixed;top:max(16px,env(safe-area-inset-top));right:16px;width:46px;height:46px;border-radius:50%;border:0;background:#ffffff26;color:#fff;font-size:20px;cursor:pointer;backdrop-filter:blur(8px)}
+#lbbar{position:fixed;left:18px;right:18px;bottom:max(20px,env(safe-area-inset-bottom));height:3px;border-radius:3px;background:#ffffff33;overflow:hidden}
+#lbbar i{display:block;height:100%;width:0;background:var(--lime)}
+#lbp{position:fixed;inset:0;margin:auto;width:76px;height:76px;border-radius:50%;background:#0009;color:#fff;font-size:30px;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .25s}
+#lb.paused #lbp{opacity:1}
 </style>
 </head>
 <body>
@@ -358,96 +369,96 @@ footer .credits{max-width:900px;margin:10px auto 0;font-size:11px;line-height:1.
       <div class="stat reveal d3"><b data-to="1">0</b><i>h</i><span data-en="from scripts to 10 finished ads, AI photos and voices included" data-es="de los guiones a 10 anuncios terminados, con fotos IA y voces">from scripts to 10 finished ads, AI photos and voices included</span></div>
     </div>
     <div class="tools reveal"><p class="tools-h" data-en="Toolkit" data-es="Herramientas">Toolkit</p><div class="tools-row"><span class="tool"><b>Claude</b><i data-en="code partner" data-es="compañero de código">code partner</i></span><span class="tool"><b>Kling</b><i data-en="AI video clips" data-es="clips de video IA">AI video clips</i></span><span class="tool"><b>ChatGPT Images</b><i data-en="product photos" data-es="fotos de producto">product photos</i></span><span class="tool"><b>ElevenLabs</b><i data-en="voiceovers EN · ES" data-es="voces EN · ES">voiceovers EN · ES</i></span><span class="tool"><b>Python</b><i data-en="batch pipeline" data-es="sistema por lotes">batch pipeline</i></span><span class="tool"><b>ffmpeg</b><i data-en="render and encode" data-es="render y codificación">render and encode</i></span><span class="tool"><b>HyperFrames</b><i data-en="motion graphics" data-es="gráficos animados">motion graphics</i></span><span class="tool"><b>Upscayl</b><i data-en="HD upscaling" data-es="ampliación HD">HD upscaling</i></span><span class="tool"><b>WebGL</b><i data-en="landing effects" data-es="efectos de landing">landing effects</i></span></div></div>
-    <figure class="proc reveal"><div class="screen procv"><video src="ads/process.mp4" poster="ads/process.jpg" muted loop playsinline preload="none" data-auto></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
+    <figure class="proc reveal"><div class="screen procv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline src="ads/process.mp4" poster="ads/process.jpg" muted loop playsinline preload="none" data-auto></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
       <figcaption data-en="The render step at work: the real log of these ads, sped up. Photos (ChatGPT), clips (Kling) and voices (ElevenLabs) are made before this step." data-es="El paso de render trabajando: el registro real de estos anuncios, acelerado. Las fotos (ChatGPT), los clips (Kling) y las voces (ElevenLabs) se hacen antes de este paso.">The pipeline at work: the real render log of these ads, sped up. Every number on this page comes from it.</figcaption></figure>
     <div class="fmt" id="fmt"><span data-en="Format" data-es="Formato">Format</span><button type="button" class="on" data-f="">9:16</button><button type="button" data-f="-4x5">4:5</button><button type="button" data-f="-1x1">1:1</button><button type="button" data-f="-6s">6 s</button></div>
     <div class="grid-ads" id="grid">
     <article class="ad big reveal" style="transition-delay:0.00s">
-      <div class="adv"><video data-src="ads/k6.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k6.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k6.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="Beat edit · bold claim hook · 13 s" data-es="Edición al ritmo · gancho de afirmación · 13 s">Beat edit · bold claim hook · 13 s</p>
       <p class="adh">“Stop drinking plain water after training.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video data-src="ads/k6es.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k6es.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6es.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k6es.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:11</span></div>
       <div class="adm"><b>KINETA</b><span>ES · Eric</span></div>
       <p class="adf" data-en="Beat edit · bold claim hook · 11 s" data-es="Edición al ritmo · gancho de afirmación · 11 s">Beat edit · bold claim hook · 11 s</p>
       <p class="adh">“Deja de tomar solo agua después de entrenar.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video data-src="ads/v1.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v1.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v1.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v1.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:16</span></div>
       <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
       <p class="adf" data-en="ASMR · sound first hook · 16 s" data-es="ASMR · gancho de sonido · 16 s">ASMR · sound first hook · 16 s</p>
       <p class="adh">“Hear that? That&#x27;s your whole glow routine, in one jar.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.16s">
-      <div class="adv"><video data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Laura</span></div>
       <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
       <p class="adh">“Plain water. After a ninety minute workout?”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.24s">
-      <div class="adv"><video data-src="ads/v2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v2.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v2.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
       <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
       <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
       <p class="adh">“Four pills. Every single morning?”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video data-src="ads/v2es.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v2es.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2es.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v2es.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
       <div class="adm"><b>VELYRA</b><span>ES · Bella</span></div>
       <p class="adf" data-en="Kinetic type · question hook · 13 s" data-es="Tipografía animada · gancho con pregunta · 13 s">Kinetic type · question hook · 13 s</p>
       <p class="adh">“¿Cuatro pastillas cada mañana?”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.00s">
-      <div class="adv"><video data-src="ads/k4.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k4.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k4.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k4.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Laura</span></div>
       <p class="adf" data-en="POV · relatable hook · 15 s" data-es="POV · gancho de identificación · 15 s">POV · relatable hook · 15 s</p>
       <p class="adh">“POV: it&#x27;s five a.m. and you actually feel ready.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video data-src="ads/v4.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v4.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v4.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v4.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
       <div class="adm"><b>VELYRA</b><span>ES · Jessica</span></div>
       <p class="adf" data-en="POV · relatable hook · 13 s" data-es="POV · gancho de identificación · 13 s">POV · relatable hook · 13 s</p>
       <p class="adh">“POV: tu rutina de brillo dura diez segundos.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.16s">
-      <div class="adv"><video data-src="ads/k3.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k3.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k3.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k3.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="Morph · problem hook · 13 s" data-es="Transformación · gancho de problema · 13 s">Morph · problem hook · 13 s</p>
       <p class="adh">“Your sweat takes more than water with it.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.24s">
-      <div class="adv"><video data-src="ads/v3.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v3.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v3.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v3.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
       <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
       <p class="adf" data-en="Morph · problem hook · 15 s" data-es="Transformación · gancho de problema · 15 s">Morph · problem hook · 15 s</p>
       <p class="adh">“Your skincare can&#x27;t reach what&#x27;s missing from the inside.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.00s">
-      <div class="adv"><video data-src="ads/k5.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k5.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k5.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k5.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="Breakdown · ingredient hook · 14 s" data-es="Desglose · gancho de ingredientes · 14 s">Breakdown · ingredient hook · 14 s</p>
       <p class="adh">“What&#x27;s actually in one stick?”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video data-src="ads/v5.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v5.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v5.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/v5.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
       <div class="adm"><b>VELYRA</b><span>EN · Laura</span></div>
       <p class="adf" data-en="Breakdown · ingredient hook · 15 s" data-es="Desglose · gancho de ingredientes · 15 s">Breakdown · ingredient hook · 15 s</p>
       <p class="adh">“Here&#x27;s exactly what&#x27;s inside one serving.”</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.16s">
-      <div class="adv"><video data-src="ads/k1.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k1.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k1.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k1.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:16</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="ASMR · sound first hook · 16 s" data-es="ASMR · gancho de sonido · 16 s">ASMR · sound first hook · 16 s</p>
@@ -467,7 +478,7 @@ footer .credits{max-width:900px;margin:10px auto 0;font-size:11px;line-height:1.
       <p class="reveal d3" data-en="Short vertical ads for TikTok, Reels and Shorts. Voiceover, kinetic captions, music and a clear hook in the first seconds. No face needed." data-es="Anuncios verticales cortos para TikTok, Reels y Shorts. Voz, subtítulos animados, música y un gancho claro en los primeros segundos. Sin rostro.">Short vertical ads for TikTok, Reels and Shorts. Voiceover, kinetic captions, music and a clear hook in the first seconds. No face needed.</p>
     </div>
     <div class="reveal d2">
-      <div class="phone"><video id="olivo" src="ads/casa-olivo-en.mp4" poster="ads/casa-olivo-en.jpg" muted loop playsinline controls preload="none"></video></div>
+      <div class="phone"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline id="olivo" src="ads/casa-olivo-en.mp4" poster="ads/casa-olivo-en.jpg" muted loop playsinline preload="none"></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
       <div class="olang" id="olang"><button type="button" class="on" data-v="en">EN</button><button type="button" data-v="es">ES</button></div>
       <div class="phone-note" data-en="Real estate ad for a fictional property, in English and Spanish. Tap for sound." data-es="Anuncio inmobiliario para una propiedad ficticia, en inglés y español. Toca para oír.">Real estate ad for a fictional property, in English and Spanish. Tap for sound.</div>
     </div>
@@ -498,7 +509,7 @@ footer .credits{max-width:900px;margin:10px auto 0;font-size:11px;line-height:1.
     <span class="tag reveal" data-en="02 · MOTION" data-es="02 · ANIMACIÓN">02 · MOTION</span>
     <h2 class="kin" id="kin" aria-label="Motion graphics"><span class="lt" style="--i:0">M</span><span class="lt" style="--i:1">O</span><span class="lt" style="--i:2">T</span><span class="lt" style="--i:3">I</span><span class="lt" style="--i:4">O</span><span class="lt" style="--i:5">N</span><span class="lt" style="--i:6">&nbsp;</span><span class="lt" style="--i:7">G</span><span class="lt" style="--i:8">R</span><span class="lt" style="--i:9">A</span><span class="lt" style="--i:10">P</span><span class="lt" style="--i:11">H</span><span class="lt" style="--i:12">I</span><span class="lt" style="--i:13">C</span><span class="lt" style="--i:14">S</span></h2>
     <p class="reveal d2" data-en="Brand reels, explainers and kinetic typography synced to voice and beat. This reel was designed and rendered end to end with code and AI." data-es="Reels de marca, videos explicativos y tipografía cinética sincronizada con la voz y el ritmo. Este reel se diseñó y renderizó de principio a fin con código e IA.">Brand reels, explainers and kinetic typography synced to voice and beat. This reel was designed and rendered end to end with code and AI.</p>
-    <div class="screen reveal d2"><video src="ads/reel.mp4" poster="ads/reel.jpg" muted loop playsinline preload="none" data-auto></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
+    <div class="screen reveal d2"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline src="ads/reel.mp4" poster="ads/reel.jpg" muted loop playsinline preload="none" data-auto></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
   </div>
 </section>
 
@@ -511,37 +522,37 @@ footer .credits{max-width:900px;margin:10px auto 0;font-size:11px;line-height:1.
     <div class="var-grid">
       <article class="ad vcard reveal" style="transition-delay:0.00s">
         <span class="chg" data-en="ORIGINAL" data-es="ORIGINAL">ORIGINAL</span>
-        <div class="adv"><video data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK A</b><span>Laura · EN</span></div>
         <p class="adf" data-en="Question" data-es="Pregunta">Question</p><p class="adh">“Plain water. After a ninety minute workout?”</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.08s">
         <span class="chg" data-en="NEW HOOK" data-es="GANCHO NUEVO">NEW HOOK</span>
-        <div class="adv"><video data-src="ads/k2b.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2b.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2b.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2b.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK B</b><span>Laura · EN</span></div>
         <p class="adf" data-en="Bold claim" data-es="Afirmación">Bold claim</p><p class="adh">“Water alone won't fix it.”</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.16s">
         <span class="chg" data-en="NEW HOOK" data-es="GANCHO NUEVO">NEW HOOK</span>
-        <div class="adv"><video data-src="ads/k2c.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2c.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2c.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2c.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK C</b><span>Liam · EN</span></div>
         <p class="adf" data-en="POV" data-es="POV">POV</p><p class="adh">“POV: you just finished leg day.”</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.24s">
         <span class="chg" data-en="NEW VOICE + LANGUAGE" data-es="VOZ E IDIOMA">NEW VOICE + LANGUAGE</span>
-        <div class="adv"><video data-src="ads/k2es.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2es.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2es.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2es.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK A</b><span>Eric · ES</span></div>
         <p class="adf" data-en="Spanish" data-es="Español">Spanish</p><p class="adh">“Agua sola. ¿Después de noventa minutos de entrenamiento?”</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.32s">
         <span class="chg" data-en="NEW FORMAT" data-es="FORMATO NUEVO">NEW FORMAT</span>
-        <div class="adv r45"><video data-src="ads/k2-4x5.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2-4x5.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">4:5</span></div>
+        <div class="adv r45"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2-4x5.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2-4x5.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">4:5</span></div>
         <div class="adm"><b>HOOK A</b><span>Laura · EN</span></div>
         <p class="adf" data-en="Feed 4:5" data-es="Feed 4:5">Feed 4:5</p><p class="adh">Instagram and Facebook feed</p>
       </article>
       <article class="ad vcard reveal" style="transition-delay:0.40s">
         <span class="chg" data-en="NEW LENGTH" data-es="DURACIÓN NUEVA">NEW LENGTH</span>
-        <div class="adv"><video data-src="ads/k2-6s.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2-6s.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
+        <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2-6s.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2-6s.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">9:16</span></div>
         <div class="adm"><b>HOOK A</b><span>Laura · EN</span></div>
         <p class="adf" data-en="Short cut, full sentences" data-es="Corte corto, frases completas">Short cut, full sentences</p><p class="adh">Hook + offer, for bumper slots</p>
       </article>
@@ -563,10 +574,10 @@ footer .credits{max-width:900px;margin:10px auto 0;font-size:11px;line-height:1.
     <div class="sec1" aria-hidden="true"><div class="sec1-bar"><i id="secfill"></i></div><b id="secnum">0.0s</b><span data-en="this is one second" data-es="esto es un segundo">this is one second</span></div>
     <p class="reveal d3" data-en="Most people decide in the first second whether to keep watching. Here is the same KINETA ad with a weak hook and with the hook I would ship. Tap either one for sound." data-es="La mayoría decide en el primer segundo si sigue mirando. Este es el mismo anuncio de KINETA con un gancho débil y con el gancho que yo entregaría. Toca cualquiera para oírlo.">Most people decide in the first second whether to keep watching. Here is the same KINETA ad with a weak hook and with the hook I would ship. Tap either one for sound.</p>
     <div class="vs">
-      <figure class="side weak reveal"><div class="adv"><video data-src="ads/k2w.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2w.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button></div>
+      <figure class="side weak reveal"><div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2w.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2w.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button></div>
         <figcaption><b data-en="✕ Weak · static, brand first" data-es="✕ Débil · fijo, la marca primero">✕ Weak · static, brand first</b><q>Introducing Kineta, an electrolyte drink mix.</q><span data-en="One still photo, the brand name first and a long caption. Nothing moves, nothing makes you stop." data-es="Una sola foto fija, la marca primero y un texto largo. Nada se mueve, nada te hace parar.">One still photo, the brand name first and a long caption. Nothing moves, nothing makes you stop.</span></figcaption></figure>
       <div class="vsb" aria-hidden="true">VS</div>
-      <figure class="side strong reveal d2"><div class="adv"><video data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button></div>
+      <figure class="side strong reveal d2"><div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img class="pst" src="ads/k2.jpg" alt=""><button class="snd" type="button" aria-label="Sound">🔇</button></div>
         <figcaption><b data-en="✓ Strong · pain first" data-es="✓ Fuerte · el problema primero">✓ Strong · pain first</b><q>Plain water. After a ninety minute workout?</q><span data-en="A question the viewer answers in their head, so they stay for the answer." data-es="Una pregunta que el espectador responde en su cabeza, así se queda por la respuesta.">A question the viewer answers in their head, so they stay for the answer.</span></figcaption></figure>
     </div>
   </div>
@@ -704,7 +715,7 @@ addEventListener('load',()=>{sizeParticles();requestAnimationFrame(tick);setLang
   vids.forEach(v=>{vis.observe(v); v.addEventListener('playing',()=>v.parentElement.classList.add('playing')); v.addEventListener('pause',()=>v.parentElement.classList.remove('playing'));});
   function mute(v){ v.muted=true; v.parentElement.classList.remove('on'); v.parentElement.querySelector('.snd').textContent='🔇'; }
   document.querySelectorAll('.adv').forEach(box=>box.addEventListener('click',()=>{
-    const v=box.querySelector('video'); if(!v.src) v.src=v.dataset.src;
+    const v=box.querySelector('video'); if(window.TOUCH){ openLB(v.dataset.src||v.getAttribute('src')); return; } if(!v.src) v.src=v.dataset.src;
     const on=v.muted;
     vids.forEach(o=>{ if(o!==v && !o.muted) mute(o); });
     if(on){ v.muted=false; v.currentTime=0; v.play().catch(()=>{}); box.classList.add('on'); box.querySelector('.snd').textContent='🔊'; }
@@ -772,8 +783,8 @@ if(location.protocol==='file:' && live){ fetch('http://127.0.0.1:8124/index.html
 addEventListener('message',e=>{ const d=e.data; if(d&&d.kineta==='scroll'){ scrollBy(0,d.dy); document.getElementById('hint').classList.add('gone'); } });
 if(live){ const hide=()=>document.getElementById('hint').classList.add('gone'); live.addEventListener('mouseenter',()=>setTimeout(hide,1800)); live.addEventListener('touchstart',hide,{passive:true}); live.querySelector('iframe').addEventListener('load',()=>{ try{ live.querySelector('iframe').contentWindow.addEventListener('scroll',hide,{once:true}); }catch(_){} }); }
 // ===== video del reel: tocar para sonido =====
-document.querySelectorAll('.screen').forEach(sc=>{const v=sc.querySelector('video'),b=sc.querySelector('.snd2');
-  sc.addEventListener('click',()=>{v.muted=!v.muted; if(!v.muted){v.currentTime=0;} v.play().catch(()=>{}); b.textContent=v.muted?'🔇':'🔊';});});
+document.querySelectorAll('.screen,.phone').forEach(sc=>{const v=sc.querySelector('video'),b=sc.querySelector('.snd2');
+  sc.addEventListener('click',()=>{ if(window.TOUCH){ openLB(v.currentSrc||v.getAttribute('src')); return; } v.muted=!v.muted; if(!v.muted){v.currentTime=0;} v.play().catch(()=>{}); b.textContent=v.muted?'🔇':'🔊';});});
 const autoIO=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target; if(e.isIntersecting) v.play().catch(()=>{}); else { v.pause(); if(!v.muted){ v.muted=true; const b=v.parentElement.querySelector('.snd2'); if(b) b.textContent='🔇'; } } }),{threshold:.3});
 document.querySelectorAll('video[data-auto], .phone video').forEach(v=>autoIO.observe(v));
 
@@ -886,6 +897,23 @@ document.querySelectorAll('.fmt button,.olang button').forEach(b=>b.addEventList
 (function(){ const u=['robdua','000884'].join(''), d=['gmail','com'].join('.'), m=u+'@'+d;
   const t=document.getElementById('mailtxt'); if(t) t.textContent=m;
   document.querySelectorAll('.mailme').forEach(a=>a.setAttribute('href','mailto:'+m+'?subject=Project%20with%20Lumi%20Laki')); })();
+</script>
+<div id="lb" hidden><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" playsinline webkit-playsinline x5-playsinline loop></video><div id="lbp">▶</div><button id="lbx" type="button" aria-label="Close">✕</button><div id="lbbar"><i></i></div></div>
+<script>
+// visor grande: en celular, tocar un video lo abre completo, sin cortes y con sonido; atrás o ✕ lo cierra
+(function(){ const lb=document.getElementById('lb'), v=lb.querySelector('video'), bar=lb.querySelector('#lbbar i');
+  window.TOUCH=!matchMedia('(hover:hover)').matches;
+  window.openLB=function(src){ if(!src) return; document.querySelectorAll('video').forEach(o=>{ if(o!==v){ if(!o.muted){ o.muted=true; const b=o.parentElement.querySelector('.snd,.snd2'); if(b) b.textContent='🔇'; o.parentElement.classList.remove('on'); } o.pause(); } });
+    v.src=src; v.muted=false; v.currentTime=0; lb.hidden=false; lb.classList.remove('paused'); document.body.style.overflow='hidden';
+    v.play().catch(()=>{ lb.classList.add('paused'); }); history.pushState({lb:1},''); };
+  function close(){ if(lb.hidden) return; v.pause(); v.removeAttribute('src'); v.load(); lb.hidden=true; document.body.style.overflow='';
+    document.querySelectorAll('.adv video[src], .screen video, .phone video').forEach(o=>{ const r=o.getBoundingClientRect(); if(r.bottom>0&&r.top<innerHeight){ o.muted=true; o.play().catch(()=>{}); } }); }
+  document.getElementById('lbx').addEventListener('click',e=>{ e.stopPropagation(); if(history.state&&history.state.lb) history.back(); else close(); });
+  addEventListener('popstate',close);
+  addEventListener('keydown',e=>{ if(e.key==='Escape'&&!lb.hidden){ if(history.state&&history.state.lb) history.back(); else close(); } });
+  lb.addEventListener('click',()=>{ if(v.paused){ v.play().catch(()=>{}); lb.classList.remove('paused'); } else { v.pause(); lb.classList.add('paused'); } });
+  v.addEventListener('timeupdate',()=>{ if(v.duration) bar.style.width=(v.currentTime/v.duration*100)+'%'; });
+})();
 </script>
 </body>
 </html>
