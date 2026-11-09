@@ -15,7 +15,7 @@
 <canvas id="polvo" aria-hidden="true"></canvas>
 <video id="vid" muted playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-hidden="true"></video>
 <script>/* celular: video de 720 px con todos los cuadros completos (salta al instante con el scroll) */
-window.KM=innerWidth<700||matchMedia('(pointer:coarse)').matches; document.getElementById('vid').src=KM?'video/pour-scrub-m.mp4':'video/pour-scrub-hd.mp4';</script>
+window.KM=innerWidth<700||matchMedia('(pointer:coarse)').matches; (function(){ const v=document.getElementById('vid'), s=KM?'video/pour-scrub-m.mp4':'video/pour-scrub-hd.mp4'; v.poster=KM?'img/pour-first-m.jpg':'img/pour-first.jpg'; window.KSRC=s; if(!location.protocol.startsWith('http')) v.src=s; })();</script>
 <div id="grano" aria-hidden="true"></div><div id="vineta" aria-hidden="true"></div>
 <header class="nav"><a class="marca" href="#top">KINETA</a>
   <nav><a href="#science">Science</a><a href="#how">How it works</a><a href="#shop">Shop</a>

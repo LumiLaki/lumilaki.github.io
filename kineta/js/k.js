@@ -41,9 +41,10 @@
   setTimeout(() => { if (!intro.classList.contains('fuera')) quitar(); }, 2200);
   try { vid.pause(); } catch (_) {}
   // en un servidor que no deja saltar dentro del archivo, el video se carga entero en memoria para que avance con el scroll
-  if (location.protocol.startsWith('http')) fetch(vid.currentSrc || vid.src).then(r => r.blob()).then(b => {
+  // en la web se descarga una sola vez y entero (así avanza fluido con el scroll); mientras tanto se ve la portada, nunca negro
+  if (location.protocol.startsWith('http')) fetch(window.KSRC).then(r => r.blob()).then(b => {
     vid.src = URL.createObjectURL(b); vid.addEventListener('loadeddata', kick, {once: true});
-  }).catch(() => {});
+  }).catch(() => { vid.src = window.KSRC; });
 
   /* ---------- dibujo ---------- */
   function size() { const r = Math.min(devicePixelRatio || 1, 1.5); cv.width = Math.round(innerWidth * r); cv.height = Math.round(innerHeight * r); kick(); }
