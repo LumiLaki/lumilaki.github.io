@@ -13,7 +13,9 @@
 <div id="intro"><div class="logo-rev"><span>KINETA</span></div></div>
 <canvas id="fondo" aria-hidden="true"></canvas>
 <canvas id="polvo" aria-hidden="true"></canvas>
-<video id="vid" src="video/pour-scrub-hd.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
+<video id="vid" muted playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-hidden="true"></video>
+<script>/* celular: video de 720 px con todos los cuadros completos (salta al instante con el scroll) */
+window.KM=innerWidth<700||matchMedia('(pointer:coarse)').matches; document.getElementById('vid').src=KM?'video/pour-scrub-m.mp4':'video/pour-scrub-hd.mp4';</script>
 <div id="grano" aria-hidden="true"></div><div id="vineta" aria-hidden="true"></div>
 <header class="nav"><a class="marca" href="#top">KINETA</a>
   <nav><a href="#science">Science</a><a href="#how">How it works</a><a href="#shop">Shop</a>
@@ -58,7 +60,8 @@
     <h2 class="gig rev"><span class="ln"><span>KINETA</span></span></h2>
     <p class="legal">*These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure or prevent any disease.<br>Spec sample for an invented brand · Video: Kling AI · Photos: ChatGPT · Made by Lumi Laki.</p></footer>
 </main>
-<script src="js/k.js?v=9"></script>
+<script>/* celular: fotos de 1100 px */ if(window.KM){ document.querySelectorAll('[data-bg]').forEach(e=>e.dataset.bg=e.dataset.bg.replace('img/','img/m/')); document.querySelectorAll('img[src^="img/"]').forEach(e=>e.src=e.getAttribute('src').replace('img/','img/m/')); }</script>
+<script src="js/k.js?v=10"></script>
 <script>
 /* dentro del portafolio: al llegar al final (o al inicio) el scroll sigue en la página principal */
 if (window.parent !== window) addEventListener('wheel', e => {

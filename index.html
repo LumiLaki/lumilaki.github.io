@@ -929,7 +929,7 @@ document.querySelectorAll('.fmt button,.olang button').forEach(b=>b.addEventList
   function startAudio(src){ const my=++tok; buf=null; stopA();
     try{ if(navigator.audioSession) navigator.audioSession.type='playback'; AC=AC||new (window.AudioContext||window.webkitAudioContext)(); AC.resume(); }catch(_){}
     const a=src.replace(/ads\/(m\/)?/,'ads/a/').replace('.mp4','.m4a');
-    const pv=new Promise(r=>{ if(v.readyState>=3) r(); else v.addEventListener('canplay',r,{once:true}); });
+    v.play().catch(()=>{}); const pv=new Promise(r=>{ if(!v.paused&&v.readyState>=3) r(); else { v.addEventListener('playing',r,{once:true}); setTimeout(r,4000); } });
     const pa=AC?fetch(a).then(r=>r.arrayBuffer()).then(d=>new Promise((ok,no)=>AC.decodeAudioData(d,ok,no))).catch(()=>null):Promise.resolve(null);
     Promise.all([pv,pa]).then(([,b])=>{ if(my!==tok||lb.hidden) return; buf=b; v.currentTime=0; v.play().catch(()=>{}); playFrom(0); lb.classList.remove('paused'); }); }
   v.addEventListener('timeupdate',()=>{ if(!srcN||!buf||v.paused) return; const at=(AC.currentTime-t0)%buf.duration; if(Math.abs(at-v.currentTime)>.3&&Math.abs(at-v.currentTime)<buf.duration-.3) playFrom(v.currentTime); });
