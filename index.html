@@ -22,7 +22,9 @@ body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Helvetica 
 a{color:inherit}
 .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
 nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:linear-gradient(#07070cee,#07070c00)}
-.logo{font-weight:900;letter-spacing:.18em;font-size:14px}
+.logo{font-weight:900;letter-spacing:.18em;font-size:14px;color:var(--ink);text-decoration:none;transition:opacity .2s}.logo:hover{opacity:.75}
+nav.solid{background:#07070ccc;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff10}
+nav{transition:background .3s}
 .logo b{color:var(--lime)}
 #lang{background:none;border:1px solid #ffffff40;color:var(--ink);border-radius:99px;padding:6px 14px;font-weight:700;cursor:pointer}
 #lang:hover{border-color:var(--lime);color:var(--lime)}
@@ -125,6 +127,7 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .dur{position:absolute;left:10px;top:10px;font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 8px;border-radius:99px;background:#07070cb0;backdrop-filter:blur(8px)}
 .adm{display:flex;flex-wrap:wrap;gap:4px 8px;justify-content:space-between;align-items:baseline;margin-top:12px;font-size:12px;letter-spacing:.16em}
 .adm .dur{position:static;background:none;backdrop-filter:none;padding:0;margin-right:8px;color:var(--lime);font-size:inherit}
+.adt{margin-top:8px;padding:9px 11px;border-left:2px solid var(--violet);background:#0e0e17;border-radius:0 10px 10px 0;font-size:12px;line-height:1.5;color:var(--mute)}.adt b{display:block;color:var(--ink);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:3px}
 .adm b{font-weight:900}.adm span{color:var(--mute);letter-spacing:.08em}
 .adf{font-size:14px;font-weight:700;margin-top:4px;color:var(--lime)}
 .adh{font-size:13px;color:var(--mute);margin-top:4px;line-height:1.4}
@@ -292,6 +295,17 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .alink:hover{border-color:var(--lime);transform:translateY(-2px)}
 .alink.pri{background:var(--lime);color:#0b0b10;border-color:var(--lime)}
 @media (max-width:700px){.about-g{grid-template-columns:1fr;gap:26px}.about .mono{width:96px;height:96px;font-size:32px}.facts{grid-template-columns:1fr}}
+.s-static{min-height:auto}
+.s-static .tag{background:var(--coral);color:#1a0607}
+.st-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:34px}
+.st-grid figure,.car figure{margin:0}
+.st-img{border-radius:16px;overflow:hidden;background:#15151f;border:1px solid #ffffff1f;box-shadow:0 1px 2px #0008,0 18px 40px #0007}
+.st-img img{display:block;width:100%;height:auto;opacity:0;transition:opacity .6s}
+.st-img img.ok{opacity:1}
+.st-grid figcaption,.car figcaption{margin-top:10px;font-size:12px;letter-spacing:.08em;color:var(--mute)}
+.car-h{margin:60px 0 6px;font-size:13px;letter-spacing:.2em;font-weight:800;color:var(--ink)}
+.car{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.st-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.car{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:8px}.car figure{flex:0 0 78%;scroll-snap-align:start}}
 /* pantalla de carga */
 #intro{position:fixed;inset:0;z-index:100;pointer-events:none;animation:introSale .5s ease 3.2s forwards}
 @keyframes introSale{to{opacity:0;visibility:hidden}}
@@ -363,11 +377,11 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 #lb.paused #lbp{opacity:1}
 </style>
 </head>
-<body>
+<body id="top">
 
 <div id="intro" aria-hidden="true"><i class="mit a"></i><i class="mit b"></i><i class="raya"></i></div>
 <a class="hire mailme" id="hire" href="#contact" data-en="Hire me ↗" data-es="Contrátame ↗">Hire me ↗</a>
-<nav><div class="logo">LUMI <b>LAKI</b></div><span class="navr"><button id="lang">ES</button></span></nav>
+<nav><a class="logo" href="#top" aria-label="Lumi Laki, back to top">LUMI <b>LAKI</b></a><span class="navr"><button id="lang">ES</button></span></nav>
 
 <header class="hero" id="top">
   <div class="wall" aria-hidden="true"><div class="wall-in" id="wall"><div class="col" style="--d:38s;--dir:normal"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v1.jpg" alt="" loading="eager"><img src="ads/t/k2.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k4.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v1.jpg" alt="" loading="eager"><img src="ads/t/k2.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k4.jpg" alt="" loading="eager"></div><div class="col" style="--d:45s;--dir:reverse"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/k3.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v5.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/k3.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v5.jpg" alt="" loading="eager"></div><div class="col" style="--d:52s;--dir:normal"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/casa-olivo.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k3.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/casa-olivo.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k3.jpg" alt="" loading="eager"></div><div class="col" style="--d:59s;--dir:reverse"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k4.jpg" alt="" loading="eager"><img src="ads/t/v1.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k4.jpg" alt="" loading="eager"><img src="ads/t/v1.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"></div><div class="col" style="--d:66s;--dir:normal"><img src="ads/t/k2.jpg" alt="" loading="eager"><img src="ads/t/v5.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/casa-olivo.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"><img src="ads/t/k2.jpg" alt="" loading="eager"><img src="ads/t/v5.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/casa-olivo.jpg" alt="" loading="eager"><img src="ads/t/v3.jpg" alt="" loading="eager"></div><div class="col" style="--d:73s;--dir:reverse"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"><img src="ads/t/k5.jpg" alt="" loading="eager"><img src="ads/t/v2.jpg" alt="" loading="eager"><img src="ads/t/k6.jpg" alt="" loading="eager"><img src="ads/t/v4.jpg" alt="" loading="eager"><img src="ads/t/k1.jpg" alt="" loading="eager"></div></div></div>
@@ -403,6 +417,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="Beat edit · bold claim hook · 13 s" data-es="Edición al ritmo · gancho de afirmación · 13 s">Beat edit · bold claim hook · 13 s</p>
       <p class="adh">“Stop drinking plain water after training.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Gym goers 18 to 34 · Watch: hook rate · Next test: bold claim vs question opener" data-es="<b>Plan de prueba</b> Público: Gente de gimnasio de 18 a 34 · Métrica: tasa de gancho · Siguiente prueba: afirmación contra pregunta"><b>Test plan</b> Audience: Gym goers 18 to 34 · Watch: hook rate · Next test: bold claim vs question opener</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k6es.jpg" alt="">
@@ -410,6 +425,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>KINETA</b><span>ES · Eric</span></div>
       <p class="adf" data-en="Beat edit · bold claim hook · 11 s" data-es="Edición al ritmo · gancho de afirmación · 11 s">Beat edit · bold claim hook · 11 s</p>
       <p class="adh">“Deja de tomar solo agua después de entrenar.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Spanish speaking gym goers, US and LatAm · Watch: hook rate · Next test: ES vs EN with the same visuals" data-es="<b>Plan de prueba</b> Público: Gente de gimnasio hispanohablante, EE. UU. y LatAm · Métrica: tasa de gancho · Siguiente prueba: español contra inglés con la misma imagen"><b>Test plan</b> Audience: Spanish speaking gym goers, US and LatAm · Watch: hook rate · Next test: ES vs EN with the same visuals</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v1.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v1.jpg" alt="">
@@ -417,6 +433,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
       <p class="adf" data-en="ASMR · sound first hook · 16 s" data-es="ASMR · gancho de sonido · 16 s">ASMR · sound first hook · 16 s</p>
       <p class="adh">“Hear that? That&#x27;s your whole glow routine, in one jar.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Women 25 to 44 into skincare · Watch: 3 second view rate · Next test: sound first vs text first opener" data-es="<b>Plan de prueba</b> Público: Mujeres de 25 a 44 interesadas en el cuidado de la piel · Métrica: vistas de 3 segundos · Siguiente prueba: abrir con sonido contra abrir con texto"><b>Test plan</b> Audience: Women 25 to 44 into skincare · Watch: 3 second view rate · Next test: sound first vs text first opener</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.16s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2.jpg" alt="">
@@ -424,6 +441,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>KINETA</b><span>EN · Laura</span></div>
       <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
       <p class="adh">“Plain water. After a ninety minute workout?”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Runners and endurance athletes · Watch: hold rate · Next test: question hook vs POV hook" data-es="<b>Plan de prueba</b> Público: Corredores y atletas de resistencia · Métrica: retención · Siguiente prueba: gancho de pregunta contra POV"><b>Test plan</b> Audience: Runners and endurance athletes · Watch: hold rate · Next test: question hook vs POV hook</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.24s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2.jpg" alt="">
@@ -431,6 +449,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
       <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
       <p class="adh">“Four pills. Every single morning?”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit" data-es="<b>Plan de prueba</b> Público: Mujeres cansadas de tomar pastillas diario · Métrica: CTR · Siguiente prueba: dolor de las pastillas contra beneficio de brillo"><b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2es.jpg" alt="">
@@ -438,6 +457,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>VELYRA</b><span>ES · Bella</span></div>
       <p class="adf" data-en="Kinetic type · question hook · 13 s" data-es="Tipografía animada · gancho con pregunta · 13 s">Kinetic type · question hook · 13 s</p>
       <p class="adh">“¿Cuatro pastillas cada mañana?”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Spanish speaking women 25 to 44 · Watch: CTR · Next test: Bella voice vs Jessica voice" data-es="<b>Plan de prueba</b> Público: Mujeres hispanohablantes de 25 a 44 · Métrica: CTR · Siguiente prueba: voz de Bella contra voz de Jessica"><b>Test plan</b> Audience: Spanish speaking women 25 to 44 · Watch: CTR · Next test: Bella voice vs Jessica voice</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.00s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k4.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k4.jpg" alt="">
@@ -445,6 +465,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>KINETA</b><span>EN · Laura</span></div>
       <p class="adf" data-en="POV · relatable hook · 15 s" data-es="POV · gancho de identificación · 15 s">POV · relatable hook · 15 s</p>
       <p class="adh">“POV: it&#x27;s five a.m. and you actually feel ready.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Early morning trainers · Watch: hook rate · Next test: 5 a.m. POV vs after work POV" data-es="<b>Plan de prueba</b> Público: Gente que entrena de madrugada · Métrica: tasa de gancho · Siguiente prueba: POV de las 5 a. m. contra POV después del trabajo"><b>Test plan</b> Audience: Early morning trainers · Watch: hook rate · Next test: 5 a.m. POV vs after work POV</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v4.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v4.jpg" alt="">
@@ -452,6 +473,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>VELYRA</b><span>ES · Jessica</span></div>
       <p class="adf" data-en="POV · relatable hook · 13 s" data-es="POV · gancho de identificación · 13 s">POV · relatable hook · 13 s</p>
       <p class="adh">“POV: tu rutina de brillo dura diez segundos.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Busy women, Spanish speaking · Watch: hold rate · Next test: 10 second routine vs ingredient angle" data-es="<b>Plan de prueba</b> Público: Mujeres ocupadas hispanohablantes · Métrica: retención · Siguiente prueba: rutina de 10 segundos contra ingredientes"><b>Test plan</b> Audience: Busy women, Spanish speaking · Watch: hold rate · Next test: 10 second routine vs ingredient angle</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.16s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k3.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k3.jpg" alt="">
@@ -459,6 +481,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="Morph · problem hook · 13 s" data-es="Transformación · gancho de problema · 13 s">Morph · problem hook · 13 s</p>
       <p class="adh">“Your sweat takes more than water with it.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Heavy sweaters, hot climates · Watch: CTR · Next test: problem first vs product first" data-es="<b>Plan de prueba</b> Público: Gente que suda mucho, climas calientes · Métrica: CTR · Siguiente prueba: problema primero contra producto primero"><b>Test plan</b> Audience: Heavy sweaters, hot climates · Watch: CTR · Next test: problem first vs product first</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.24s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v3.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v3.jpg" alt="">
@@ -466,6 +489,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
       <p class="adf" data-en="Morph · problem hook · 15 s" data-es="Transformación · gancho de problema · 15 s">Morph · problem hook · 15 s</p>
       <p class="adh">“Your skincare can&#x27;t reach what&#x27;s missing from the inside.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Skincare buyers who tried everything · Watch: CTR · Next test: inside out angle vs before and after" data-es="<b>Plan de prueba</b> Público: Compradoras de skincare que ya probaron todo · Métrica: CTR · Siguiente prueba: de adentro hacia afuera contra antes y después"><b>Test plan</b> Audience: Skincare buyers who tried everything · Watch: CTR · Next test: inside out angle vs before and after</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.00s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k5.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k5.jpg" alt="">
@@ -473,6 +497,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="Breakdown · ingredient hook · 14 s" data-es="Desglose · gancho de ingredientes · 14 s">Breakdown · ingredient hook · 14 s</p>
       <p class="adh">“What&#x27;s actually in one stick?”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Label readers, clean ingredient fans · Watch: CPA · Next test: ingredient breakdown vs price per serving" data-es="<b>Plan de prueba</b> Público: Gente que lee etiquetas y busca ingredientes limpios · Métrica: CPA · Siguiente prueba: ingredientes contra precio por porción"><b>Test plan</b> Audience: Label readers, clean ingredient fans · Watch: CPA · Next test: ingredient breakdown vs price per serving</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.08s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v5.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v5.jpg" alt="">
@@ -480,6 +505,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>VELYRA</b><span>EN · Laura</span></div>
       <p class="adf" data-en="Breakdown · ingredient hook · 15 s" data-es="Desglose · gancho de ingredientes · 15 s">Breakdown · ingredient hook · 15 s</p>
       <p class="adh">“Here&#x27;s exactly what&#x27;s inside one serving.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Ingredient conscious women · Watch: CPA · Next test: ingredient list vs dermatologist angle" data-es="<b>Plan de prueba</b> Público: Mujeres que revisan ingredientes · Métrica: CPA · Siguiente prueba: lista de ingredientes contra ángulo de especialista"><b>Test plan</b> Audience: Ingredient conscious women · Watch: CPA · Next test: ingredient list vs dermatologist angle</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.16s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k1.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k1.jpg" alt="">
@@ -487,6 +513,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
       <p class="adf" data-en="ASMR · sound first hook · 16 s" data-es="ASMR · gancho de sonido · 16 s">ASMR · sound first hook · 16 s</p>
       <p class="adh">“Hear that? That&#x27;s ten seconds to real hydration.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Fitness fans on TikTok · Watch: 3 second view rate · Next test: ASMR pour vs voice first" data-es="<b>Plan de prueba</b> Público: Fans del fitness en TikTok · Métrica: vistas de 3 segundos · Siguiente prueba: sonido ASMR contra voz primero"><b>Test plan</b> Audience: Fitness fans on TikTok · Watch: 3 second view rate · Next test: ASMR pour vs voice first</p>
     </article>
     </div>
     <p class="reel-note" data-en="VELYRA and KINETA are invented brands made for these samples. Images: ChatGPT · Footage: Kling AI free plan, watermark kept · Voices: ElevenLabs free plan · Music: Twin Musicom and Kevin MacLeod (CC BY)." data-es="VELYRA y KINETA son marcas inventadas para estas muestras. Imágenes: ChatGPT · Video: plan gratis de Kling AI, con su marca de agua · Voces: plan gratis de ElevenLabs · Música: Twin Musicom y Kevin MacLeod (CC BY).">VELYRA and KINETA are invented brands made for these samples. Images: ChatGPT · Footage: Kling AI free plan, watermark kept · Voices: ElevenLabs free plan · Music: Twin Musicom and Kevin MacLeod (CC BY).</p>
@@ -606,10 +633,20 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
     </div>
   </div>
 </section>
+<section class="scene s-static" id="static">
+  <div class="wrap wide">
+    <span class="tag reveal" data-en="04 · STATIC" data-es="04 · ESTÁTICOS">04 · STATIC</span>
+    <h2 class="reveal d2" data-en="Static ads and <em>carousels</em>" data-es="Anuncios fijos y <em>carruseles</em>">Static ads and <em>carousels</em></h2>
+    <p class="reveal d3" data-en="Feed ads in 4:5 for Meta, built from the same product images and the same offers as the video ads, so every format tells one story." data-es="Anuncios de feed en 4:5 para Meta, hechos con las mismas fotos de producto y las mismas ofertas que los videos, para que todos los formatos cuenten una sola historia.">Feed ads in 4:5 for Meta, built from the same product images and the same offers as the video ads, so every format tells one story.</p>
+    <div class="st-grid"><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/s-kineta-1.jpg" alt="KINETA · problem headline · offer badge"></div><figcaption data-en="KINETA · problem headline · offer badge" data-es="KINETA · titular de problema · oferta">KINETA · problem headline · offer badge</figcaption></figure><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/s-kineta-2.jpg" alt="KINETA · proof with real numbers"></div><figcaption data-en="KINETA · proof with real numbers" data-es="KINETA · prueba con cifras reales">KINETA · proof with real numbers</figcaption></figure><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/s-velyra-1.jpg" alt="VELYRA · comparison claim"></div><figcaption data-en="VELYRA · comparison claim" data-es="VELYRA · comparación directa">VELYRA · comparison claim</figcaption></figure><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/s-velyra-2.jpg" alt="VELYRA · benefit plus risk reversal"></div><figcaption data-en="VELYRA · benefit plus risk reversal" data-es="VELYRA · beneficio y garantía">VELYRA · benefit plus risk reversal</figcaption></figure></div>
+    <p class="car-h reveal" data-en="CAROUSEL · 3 CARDS · 1:1" data-es="CARRUSEL · 3 TARJETAS · 1:1">CAROUSEL · 3 CARDS · 1:1</p>
+    <div class="car"><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/c-kineta-1.jpg" alt="1 · Problem"></div><figcaption data-en="1 · Problem" data-es="1 · Problema">1 · Problem</figcaption></figure><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/c-kineta-2.jpg" alt="2 · Solution"></div><figcaption data-en="2 · Solution" data-es="2 · Solución">2 · Solution</figcaption></figure><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/c-kineta-3.jpg" alt="3 · Payoff and offer"></div><figcaption data-en="3 · Payoff and offer" data-es="3 · Resultado y oferta">3 · Payoff and offer</figcaption></figure></div>
+  </div>
+</section>
 <section class="scene s-web" id="web">
   <div class="wrap wide">
     <div class="web-head">
-      <span class="tag reveal" data-en="04 · WEB" data-es="04 · WEB">04 · WEB</span>
+      <span class="tag reveal" data-en="05 · WEB" data-es="05 · WEB">05 · WEB</span>
       <h2 class="reveal d2" data-en="Landing <em>pages</em>" data-es="Páginas de <em>venta</em>">Landing <em>pages</em></h2>
       <p class="reveal d3" data-en="Cinematic product pages: video tied to scroll, dust transitions, live camera moves. This KINETA demo is fully coded and works on mobile." data-es="Páginas de producto cinematográficas: video ligado al scroll, transiciones en polvo y cámara en vivo. Esta demo de KINETA está programada a mano y funciona en el celular.">Cinematic product pages: video tied to scroll, dust transitions, live camera moves. This KINETA demo is fully coded and works on mobile.</p>
     </div>
@@ -986,6 +1023,13 @@ document.querySelectorAll('.fmt button,.olang button').forEach(b=>b.addEventList
   lb.addEventListener('click',e=>{ if(!w.contains(e.target)){ back(e); return; } if(v.paused){ v.play().catch(()=>{}); playFrom(v.currentTime); lb.classList.remove('paused'); } else { v.pause(); stopA(); lb.classList.add('paused'); } });
   v.addEventListener('timeupdate',()=>{ if(v.duration) bar.style.width=(v.currentTime/v.duration*100)+'%'; });
 })();
+
+// ===== estáticos: aparecen solo cuando la imagen está lista =====
+document.querySelectorAll('.st-img img').forEach(im=>{ const ok=()=>im.classList.add('ok'); if(im.complete&&im.naturalWidth) ok(); else im.addEventListener('load',()=>(im.decode?im.decode().catch(()=>{}):Promise.resolve()).then(ok)); });
+
+// ===== logo: vuelve arriba; barra con fondo al bajar para que no se encime con el texto =====
+document.querySelector('.logo').addEventListener('click',e=>{ e.preventDefault(); scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'}); history.replaceState(null,'',location.pathname); });
+{ const nv=document.querySelector('nav'); const f=()=>nv.classList.toggle('solid',scrollY>60); addEventListener('scroll',f,{passive:true}); f(); }
 </script>
 </body>
 </html>
