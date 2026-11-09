@@ -645,7 +645,7 @@ btn.onclick=()=>setLang(lang==='en'?'es':'en');
 
 // Partículas: forman palabras que se transforman con remolino; estela luminosa; ola de luz; tocar = onda expansiva
 const cv=document.getElementById('particles'), cx=cv.getContext('2d');
-let P=[], mouse={x:-999,y:-999}, W, H, wordI=0, swirl=0, waves=[], visible=false, lastT=0;
+let STEP=4, P=[], mouse={x:-999,y:-999}, W, H, wordI=0, swirl=0, waves=[], visible=false, lastT=0;
 const WORDS={en:['AI','HOOK','SCALE','EN · ES'],es:['IA','GANCHO','VOLUMEN','ES · EN']};
 const COLS=['#c6ff3d','#8b5cf6','#22d3ee','#ff5a5f','#ffffff'];
 function sizeParticles(){W=cv.width=cv.offsetWidth*devicePixelRatio;H=cv.height=cv.offsetHeight*devicePixelRatio;drawWord();}
@@ -656,7 +656,7 @@ function drawWord(){
   let fs=Math.min(H*.86,W*.45); c.font=`900 ${fs}px -apple-system,Arial`;
   while(c.measureText(word).width>W*.9){fs*=.92;c.font=`900 ${fs}px -apple-system,Arial`;}
   c.fillStyle='#fff';c.textAlign='center';c.textBaseline='middle';c.fillText(word,W/2,H/2);
-  const d=c.getImageData(0,0,W,H).data, step=Math.max(4,Math.round(W/190)), t=[];
+  const d=c.getImageData(0,0,W,H).data, step=Math.max(4,Math.round(3*devicePixelRatio),Math.round(W/190)), t=[]; STEP=step;
   for(let y=0;y<H;y+=step)for(let x=0;x<W;x+=step)if(d[(y*W+x)*4+3]>128)t.push([x,y]);
   t.sort(()=>Math.random()-.5);
   while(P.length<t.length){const q=P[(Math.random()*P.length)|0]; P.push({x:q?q.x:Math.random()*W,y:q?q.y:Math.random()*H,vx:0,vy:0,c:COLS[P.length%5],r:.6+Math.random()*.9});}
@@ -679,7 +679,7 @@ function tick(now){
     p.vx+=(p.tx-p.x)*.022;p.vy+=(p.ty-p.y)*.022;p.vx*=.86;p.vy*=.86;p.x+=p.vx;p.y+=p.vy;
     const lit=Math.max(0,1-Math.abs(p.x-band)/(W*.08)), sp=Math.min(1,Math.hypot(p.vx,p.vy)/6);
     cx.globalAlpha=.55+.45*Math.max(lit,sp); cx.fillStyle=lit>.5?'#ffffff':p.c;
-    const z=dpr*(1.6+p.r+lit*1.4); cx.fillRect(p.x-z/2,p.y-z/2,z,z);
+    const z=Math.min(dpr*(1.6+p.r+lit*1.4), STEP*(.38+p.r*.06+lit*.2)); cx.fillRect(p.x-z/2,p.y-z/2,z,z);
   }
   cx.globalAlpha=1;
   waves=waves.filter(w=>{ w.r+=14*dpr; w.f*=.94; cx.strokeStyle=`rgba(198,255,61,${w.f/12})`; cx.lineWidth=2*dpr; cx.beginPath(); cx.arc(w.x,w.y,w.r,0,7); cx.stroke(); return w.f>.3; });
