@@ -113,6 +113,12 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .reel h2 em{font-style:normal;color:var(--lime)}
 .reel>.wrap>p{color:var(--mute);max-width:640px;font-size:17px;margin-bottom:44px}
 .grid-ads{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.grid-ads:not(.all) .extra{display:none}
+.more-btn{display:block;margin:26px auto 0;padding:14px 26px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;font:inherit;font-weight:600;cursor:pointer}
+.grid-ads.all+.more-btn{display:none}
+.s-case .wrap{display:block!important;max-width:1180px}.s-case h2{font-size:clamp(34px,5vw,64px)!important;margin:10px 0 14px}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}.case-grid div{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px}.case-grid b{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin-bottom:8px}
+@media (max-width:760px){.case-grid{grid-template-columns:1fr}}
 .ad{min-width:0}
 .ad.big .adv{max-height:none}
 @media (max-width:900px){.ad.big{grid-column:span 1;grid-row:span 1}}
@@ -390,7 +396,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
     <p class="kick" data-en="LUMI LAKI · AI VIDEO CREATOR" data-es="LUMI LAKI · CREADOR DE VIDEO CON IA">LUMI LAKI · AI VIDEO CREATOR</p>
     <h1 class="mega"><span class="slam" id="slam" data-en="AI VIDEO ADS" data-es="ANUNCIOS CON IA">AI VIDEO ADS</span>
       <span class="swap" id="swap" aria-live="polite"></span></h1>
-    <p class="sub" data-en="13 spec ads · EN and ES · batch rendered" data-es="13 anuncios de muestra · inglés y español · render por lotes">13 spec ads · EN and ES · batch rendered</p>
+    <p class="sub" data-en="Short vertical ads in English and Spanish, with hook, voice and format variations in minutes" data-es="Anuncios verticales cortos en inglés y español, con variaciones de gancho, voz y formato en minutos">Short vertical ads in English and Spanish, with hook, voice and format variations in minutes</p>
     <a class="hero-cta" href="#ads" data-en="Watch the ads ↓" data-es="Ver los anuncios ↓">Watch the ads ↓</a>
   </div>
 </header>
@@ -411,31 +417,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <figcaption data-en="The render step at work: the real log of these ads, sped up. Photos (ChatGPT), clips (Kling) and voices (ElevenLabs) are made before this step." data-es="El paso de render trabajando: el registro real de estos anuncios, acelerado. Las fotos (ChatGPT), los clips (Kling) y las voces (ElevenLabs) se hacen antes de este paso.">The pipeline at work: the real render log of these ads, sped up. Every number on this page comes from it.</figcaption></figure>
     <div class="fmt" id="fmt"><span data-en="Format" data-es="Formato">Format</span><button type="button" class="on" data-f="">9:16</button><button type="button" data-f="-4x5">4:5</button><button type="button" data-f="-1x1">1:1</button><button type="button" data-f="-6s">6 s</button></div>
     <div class="grid-ads" id="grid">
-    <article class="ad big reveal" style="transition-delay:0.00s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k6.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
-      <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
-      <p class="adf" data-en="Beat edit · bold claim hook · 13 s" data-es="Edición al ritmo · gancho de afirmación · 13 s">Beat edit · bold claim hook · 13 s</p>
-      <p class="adh">“Stop drinking plain water after training.”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Gym goers 18 to 34 · Watch: hook rate · Next test: bold claim vs question opener" data-es="<b>Plan de prueba</b> Público: Gente de gimnasio de 18 a 34 · Métrica: tasa de gancho · Siguiente prueba: afirmación contra pregunta"><b>Test plan</b> Audience: Gym goers 18 to 34 · Watch: hook rate · Next test: bold claim vs question opener</p>
-    </article>
-    <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k6es.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:11</span></div>
-      <div class="adm"><b>KINETA</b><span>ES · Eric</span></div>
-      <p class="adf" data-en="Beat edit · bold claim hook · 11 s" data-es="Edición al ritmo · gancho de afirmación · 11 s">Beat edit · bold claim hook · 11 s</p>
-      <p class="adh">“Deja de tomar solo agua después de entrenar.”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Spanish speaking gym goers, US and LatAm · Watch: hook rate · Next test: ES vs EN with the same visuals" data-es="<b>Plan de prueba</b> Público: Gente de gimnasio hispanohablante, EE. UU. y LatAm · Métrica: tasa de gancho · Siguiente prueba: español contra inglés con la misma imagen"><b>Test plan</b> Audience: Spanish speaking gym goers, US and LatAm · Watch: hook rate · Next test: ES vs EN with the same visuals</p>
-    </article>
-    <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v1.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v1.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:16</span></div>
-      <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
-      <p class="adf" data-en="ASMR · sound first hook · 16 s" data-es="ASMR · gancho de sonido · 16 s">ASMR · sound first hook · 16 s</p>
-      <p class="adh">“Hear that? That&#x27;s your whole glow routine, in one jar.”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Women 25 to 44 into skincare · Watch: 3 second view rate · Next test: sound first vs text first opener" data-es="<b>Plan de prueba</b> Público: Mujeres de 25 a 44 interesadas en el cuidado de la piel · Métrica: vistas de 3 segundos · Siguiente prueba: abrir con sonido contra abrir con texto"><b>Test plan</b> Audience: Women 25 to 44 into skincare · Watch: 3 second view rate · Next test: sound first vs text first opener</p>
-    </article>
-    <article class="ad reveal" style="transition-delay:0.16s">
+    <article class="ad big reveal" style="transition-delay:0.16s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k2.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Laura</span></div>
@@ -443,53 +425,13 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <p class="adh">“Plain water. After a ninety minute workout?”</p>
       <p class="adt" data-en="<b>Test plan</b> Audience: Runners and endurance athletes · Watch: hold rate · Next test: question hook vs POV hook" data-es="<b>Plan de prueba</b> Público: Corredores y atletas de resistencia · Métrica: retención · Siguiente prueba: gancho de pregunta contra POV"><b>Test plan</b> Audience: Runners and endurance athletes · Watch: hold rate · Next test: question hook vs POV hook</p>
     </article>
-    <article class="ad reveal" style="transition-delay:0.24s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
-      <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
-      <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
-      <p class="adh">“Four pills. Every single morning?”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit" data-es="<b>Plan de prueba</b> Público: Mujeres cansadas de tomar pastillas diario · Métrica: CTR · Siguiente prueba: dolor de las pastillas contra beneficio de brillo"><b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit</p>
-    </article>
-    <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2es.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
-      <div class="adm"><b>VELYRA</b><span>ES · Bella</span></div>
-      <p class="adf" data-en="Kinetic type · question hook · 13 s" data-es="Tipografía animada · gancho con pregunta · 13 s">Kinetic type · question hook · 13 s</p>
-      <p class="adh">“¿Cuatro pastillas cada mañana?”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Spanish speaking women 25 to 44 · Watch: CTR · Next test: Bella voice vs Jessica voice" data-es="<b>Plan de prueba</b> Público: Mujeres hispanohablantes de 25 a 44 · Métrica: CTR · Siguiente prueba: voz de Bella contra voz de Jessica"><b>Test plan</b> Audience: Spanish speaking women 25 to 44 · Watch: CTR · Next test: Bella voice vs Jessica voice</p>
-    </article>
     <article class="ad reveal" style="transition-delay:0.00s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k4.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k4.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
-      <div class="adm"><b>KINETA</b><span>EN · Laura</span></div>
-      <p class="adf" data-en="POV · relatable hook · 15 s" data-es="POV · gancho de identificación · 15 s">POV · relatable hook · 15 s</p>
-      <p class="adh">“POV: it&#x27;s five a.m. and you actually feel ready.”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Early morning trainers · Watch: hook rate · Next test: 5 a.m. POV vs after work POV" data-es="<b>Plan de prueba</b> Público: Gente que entrena de madrugada · Métrica: tasa de gancho · Siguiente prueba: POV de las 5 a. m. contra POV después del trabajo"><b>Test plan</b> Audience: Early morning trainers · Watch: hook rate · Next test: 5 a.m. POV vs after work POV</p>
-    </article>
-    <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v4.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v4.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
-      <div class="adm"><b>VELYRA</b><span>ES · Jessica</span></div>
-      <p class="adf" data-en="POV · relatable hook · 13 s" data-es="POV · gancho de identificación · 13 s">POV · relatable hook · 13 s</p>
-      <p class="adh">“POV: tu rutina de brillo dura diez segundos.”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Busy women, Spanish speaking · Watch: hold rate · Next test: 10 second routine vs ingredient angle" data-es="<b>Plan de prueba</b> Público: Mujeres ocupadas hispanohablantes · Métrica: retención · Siguiente prueba: rutina de 10 segundos contra ingredientes"><b>Test plan</b> Audience: Busy women, Spanish speaking · Watch: hold rate · Next test: 10 second routine vs ingredient angle</p>
-    </article>
-    <article class="ad reveal" style="transition-delay:0.16s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k3.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k3.jpg" alt="">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k6.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
       <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
-      <p class="adf" data-en="Morph · problem hook · 13 s" data-es="Transformación · gancho de problema · 13 s">Morph · problem hook · 13 s</p>
-      <p class="adh">“Your sweat takes more than water with it.”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Heavy sweaters, hot climates · Watch: CTR · Next test: problem first vs product first" data-es="<b>Plan de prueba</b> Público: Gente que suda mucho, climas calientes · Métrica: CTR · Siguiente prueba: problema primero contra producto primero"><b>Test plan</b> Audience: Heavy sweaters, hot climates · Watch: CTR · Next test: problem first vs product first</p>
-    </article>
-    <article class="ad reveal" style="transition-delay:0.24s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v3.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v3.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
-      <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
-      <p class="adf" data-en="Morph · problem hook · 15 s" data-es="Transformación · gancho de problema · 15 s">Morph · problem hook · 15 s</p>
-      <p class="adh">“Your skincare can&#x27;t reach what&#x27;s missing from the inside.”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Skincare buyers who tried everything · Watch: CTR · Next test: inside out angle vs before and after" data-es="<b>Plan de prueba</b> Público: Compradoras de skincare que ya probaron todo · Métrica: CTR · Siguiente prueba: de adentro hacia afuera contra antes y después"><b>Test plan</b> Audience: Skincare buyers who tried everything · Watch: CTR · Next test: inside out angle vs before and after</p>
+      <p class="adf" data-en="Beat edit · bold claim hook · 13 s" data-es="Edición al ritmo · gancho de afirmación · 13 s">Beat edit · bold claim hook · 13 s</p>
+      <p class="adh">“Stop drinking plain water after training.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Gym goers 18 to 34 · Watch: hook rate · Next test: bold claim vs question opener" data-es="<b>Plan de prueba</b> Público: Gente de gimnasio de 18 a 34 · Métrica: tasa de gancho · Siguiente prueba: afirmación contra pregunta"><b>Test plan</b> Audience: Gym goers 18 to 34 · Watch: hook rate · Next test: bold claim vs question opener</p>
     </article>
     <article class="ad reveal" style="transition-delay:0.00s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k5.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k5.jpg" alt="">
@@ -499,14 +441,6 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <p class="adh">“What&#x27;s actually in one stick?”</p>
       <p class="adt" data-en="<b>Test plan</b> Audience: Label readers, clean ingredient fans · Watch: CPA · Next test: ingredient breakdown vs price per serving" data-es="<b>Plan de prueba</b> Público: Gente que lee etiquetas y busca ingredientes limpios · Métrica: CPA · Siguiente prueba: ingredientes contra precio por porción"><b>Test plan</b> Audience: Label readers, clean ingredient fans · Watch: CPA · Next test: ingredient breakdown vs price per serving</p>
     </article>
-    <article class="ad reveal" style="transition-delay:0.08s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v5.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v5.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
-      <div class="adm"><b>VELYRA</b><span>EN · Laura</span></div>
-      <p class="adf" data-en="Breakdown · ingredient hook · 15 s" data-es="Desglose · gancho de ingredientes · 15 s">Breakdown · ingredient hook · 15 s</p>
-      <p class="adh">“Here&#x27;s exactly what&#x27;s inside one serving.”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Ingredient conscious women · Watch: CPA · Next test: ingredient list vs dermatologist angle" data-es="<b>Plan de prueba</b> Público: Mujeres que revisan ingredientes · Métrica: CPA · Siguiente prueba: lista de ingredientes contra ángulo de especialista"><b>Test plan</b> Audience: Ingredient conscious women · Watch: CPA · Next test: ingredient list vs dermatologist angle</p>
-    </article>
     <article class="ad reveal" style="transition-delay:0.16s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k1.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k1.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:16</span></div>
@@ -515,7 +449,80 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <p class="adh">“Hear that? That&#x27;s ten seconds to real hydration.”</p>
       <p class="adt" data-en="<b>Test plan</b> Audience: Fitness fans on TikTok · Watch: 3 second view rate · Next test: ASMR pour vs voice first" data-es="<b>Plan de prueba</b> Público: Fans del fitness en TikTok · Métrica: vistas de 3 segundos · Siguiente prueba: sonido ASMR contra voz primero"><b>Test plan</b> Audience: Fitness fans on TikTok · Watch: 3 second view rate · Next test: ASMR pour vs voice first</p>
     </article>
+    <article class="ad reveal" style="transition-delay:0.08s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v5.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v5.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
+      <div class="adm"><b>VELYRA</b><span>EN · Laura</span></div>
+      <p class="adf" data-en="Breakdown · ingredient hook · 15 s" data-es="Desglose · gancho de ingredientes · 15 s">Breakdown · ingredient hook · 15 s</p>
+      <p class="adh">“Here&#x27;s exactly what&#x27;s inside one serving.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Ingredient conscious women · Watch: CPA · Next test: ingredient list vs dermatologist angle" data-es="<b>Plan de prueba</b> Público: Mujeres que revisan ingredientes · Métrica: CPA · Siguiente prueba: lista de ingredientes contra ángulo de especialista"><b>Test plan</b> Audience: Ingredient conscious women · Watch: CPA · Next test: ingredient list vs dermatologist angle</p>
+    </article>
+    <article class="ad reveal" style="transition-delay:0.08s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k6es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k6es.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:11</span></div>
+      <div class="adm"><b>KINETA</b><span>ES · Eric</span></div>
+      <p class="adf" data-en="Beat edit · bold claim hook · 11 s" data-es="Edición al ritmo · gancho de afirmación · 11 s">Beat edit · bold claim hook · 11 s</p>
+      <p class="adh">“Deja de tomar solo agua después de entrenar.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Spanish speaking gym goers, US and LatAm · Watch: hook rate · Next test: ES vs EN with the same visuals" data-es="<b>Plan de prueba</b> Público: Gente de gimnasio hispanohablante, EE. UU. y LatAm · Métrica: tasa de gancho · Siguiente prueba: español contra inglés con la misma imagen"><b>Test plan</b> Audience: Spanish speaking gym goers, US and LatAm · Watch: hook rate · Next test: ES vs EN with the same visuals</p>
+    </article>
+    <article class="ad extra reveal" style="transition-delay:0.08s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v1.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v1.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:16</span></div>
+      <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
+      <p class="adf" data-en="ASMR · sound first hook · 16 s" data-es="ASMR · gancho de sonido · 16 s">ASMR · sound first hook · 16 s</p>
+      <p class="adh">“Hear that? That&#x27;s your whole glow routine, in one jar.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Women 25 to 44 into skincare · Watch: 3 second view rate · Next test: sound first vs text first opener" data-es="<b>Plan de prueba</b> Público: Mujeres de 25 a 44 interesadas en el cuidado de la piel · Métrica: vistas de 3 segundos · Siguiente prueba: abrir con sonido contra abrir con texto"><b>Test plan</b> Audience: Women 25 to 44 into skincare · Watch: 3 second view rate · Next test: sound first vs text first opener</p>
+    </article>
+    <article class="ad extra reveal" style="transition-delay:0.24s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
+      <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
+      <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
+      <p class="adh">“Four pills. Every single morning?”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit" data-es="<b>Plan de prueba</b> Público: Mujeres cansadas de tomar pastillas diario · Métrica: CTR · Siguiente prueba: dolor de las pastillas contra beneficio de brillo"><b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit</p>
+    </article>
+    <article class="ad extra reveal" style="transition-delay:0.08s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2es.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
+      <div class="adm"><b>VELYRA</b><span>ES · Bella</span></div>
+      <p class="adf" data-en="Kinetic type · question hook · 13 s" data-es="Tipografía animada · gancho con pregunta · 13 s">Kinetic type · question hook · 13 s</p>
+      <p class="adh">“¿Cuatro pastillas cada mañana?”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Spanish speaking women 25 to 44 · Watch: CTR · Next test: Bella voice vs Jessica voice" data-es="<b>Plan de prueba</b> Público: Mujeres hispanohablantes de 25 a 44 · Métrica: CTR · Siguiente prueba: voz de Bella contra voz de Jessica"><b>Test plan</b> Audience: Spanish speaking women 25 to 44 · Watch: CTR · Next test: Bella voice vs Jessica voice</p>
+    </article>
+    <article class="ad extra reveal" style="transition-delay:0.00s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k4.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k4.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
+      <div class="adm"><b>KINETA</b><span>EN · Laura</span></div>
+      <p class="adf" data-en="POV · relatable hook · 15 s" data-es="POV · gancho de identificación · 15 s">POV · relatable hook · 15 s</p>
+      <p class="adh">“POV: it&#x27;s five a.m. and you actually feel ready.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Early morning trainers · Watch: hook rate · Next test: 5 a.m. POV vs after work POV" data-es="<b>Plan de prueba</b> Público: Gente que entrena de madrugada · Métrica: tasa de gancho · Siguiente prueba: POV de las 5 a. m. contra POV después del trabajo"><b>Test plan</b> Audience: Early morning trainers · Watch: hook rate · Next test: 5 a.m. POV vs after work POV</p>
+    </article>
+    <article class="ad extra reveal" style="transition-delay:0.08s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v4.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v4.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
+      <div class="adm"><b>VELYRA</b><span>ES · Jessica</span></div>
+      <p class="adf" data-en="POV · relatable hook · 13 s" data-es="POV · gancho de identificación · 13 s">POV · relatable hook · 13 s</p>
+      <p class="adh">“POV: tu rutina de brillo dura diez segundos.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Busy women, Spanish speaking · Watch: hold rate · Next test: 10 second routine vs ingredient angle" data-es="<b>Plan de prueba</b> Público: Mujeres ocupadas hispanohablantes · Métrica: retención · Siguiente prueba: rutina de 10 segundos contra ingredientes"><b>Test plan</b> Audience: Busy women, Spanish speaking · Watch: hold rate · Next test: 10 second routine vs ingredient angle</p>
+    </article>
+    <article class="ad extra reveal" style="transition-delay:0.16s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/k3.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/k3.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:13</span></div>
+      <div class="adm"><b>KINETA</b><span>EN · Liam</span></div>
+      <p class="adf" data-en="Morph · problem hook · 13 s" data-es="Transformación · gancho de problema · 13 s">Morph · problem hook · 13 s</p>
+      <p class="adh">“Your sweat takes more than water with it.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Heavy sweaters, hot climates · Watch: CTR · Next test: problem first vs product first" data-es="<b>Plan de prueba</b> Público: Gente que suda mucho, climas calientes · Métrica: CTR · Siguiente prueba: problema primero contra producto primero"><b>Test plan</b> Audience: Heavy sweaters, hot climates · Watch: CTR · Next test: problem first vs product first</p>
+    </article>
+    <article class="ad extra reveal" style="transition-delay:0.24s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v3.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v3.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
+      <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
+      <p class="adf" data-en="Morph · problem hook · 15 s" data-es="Transformación · gancho de problema · 15 s">Morph · problem hook · 15 s</p>
+      <p class="adh">“Your skincare can&#x27;t reach what&#x27;s missing from the inside.”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Skincare buyers who tried everything · Watch: CTR · Next test: inside out angle vs before and after" data-es="<b>Plan de prueba</b> Público: Compradoras de skincare que ya probaron todo · Métrica: CTR · Siguiente prueba: de adentro hacia afuera contra antes y después"><b>Test plan</b> Audience: Skincare buyers who tried everything · Watch: CTR · Next test: inside out angle vs before and after</p>
+    </article>
     </div>
+    <button type="button" class="more-btn" id="moreAds" data-en="See all 13 ads ↓" data-es="Ver los 13 anuncios ↓">See all 13 ads ↓</button>
     <p class="reel-note" data-en="VELYRA and KINETA are invented brands made for these samples. Images: ChatGPT · Footage: Kling AI free plan, watermark kept · Voices: ElevenLabs free plan · Music: Twin Musicom and Kevin MacLeod (CC BY)." data-es="VELYRA y KINETA son marcas inventadas para estas muestras. Imágenes: ChatGPT · Video: plan gratis de Kling AI, con su marca de agua · Voces: plan gratis de ElevenLabs · Música: Twin Musicom y Kevin MacLeod (CC BY).">VELYRA and KINETA are invented brands made for these samples. Images: ChatGPT · Footage: Kling AI free plan, watermark kept · Voices: ElevenLabs free plan · Music: Twin Musicom and Kevin MacLeod (CC BY).</p>
   </div>
 </section>
@@ -633,6 +640,15 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
     </div>
   </div>
 </section>
+<section class="scene s-case" id="case">
+  <div class="wrap">
+    <span class="tag reveal" data-en="CASE STUDY" data-es="CASO DE ESTUDIO">CASE STUDY</span>
+    <h2 class="reveal d2" data-en="KINETA · <em>question hook</em>" data-es="KINETA · <em>gancho de pregunta</em>">KINETA · <em>question hook</em></h2>
+    <p class="reveal d3" data-en="Spec work for an invented brand. No ad spend or results yet: this shows how I would build and test it." data-es="Trabajo de muestra para una marca inventada. Aún sin inversión ni resultados: muestra cómo lo construiría y probaría.">Spec work for an invented brand. No ad spend or results yet: this shows how I would build and test it.</p>
+    <div class="case-grid reveal"><div><b data-en="Goal" data-es="Objetivo">Goal</b><span data-en="Test a question hook against a weak, brand first opener." data-es="Probar un gancho de pregunta contra una apertura débil que empieza con la marca.">Test a question hook against a weak, brand first opener.</span></div><div><b data-en="Audience" data-es="Público">Audience</b><span data-en="Runners and endurance athletes who drink plain water after long workouts." data-es="Corredores y atletas de resistencia que toman solo agua después de entrenar largo.">Runners and endurance athletes who drink plain water after long workouts.</span></div><div><b data-en="Concept" data-es="Concepto">Concept</b><span data-en="Plain water. After a ninety minute workout? The problem on screen first, then the pour, then the offer." data-es="¿Agua sola después de noventa minutos? Primero el problema en pantalla, luego el vertido y después la oferta.">Plain water. After a ninety minute workout? The problem on screen first, then the pour, then the offer.</span></div><div><b data-en="Process" data-es="Proceso">Process</b><span data-en="Script in one copy file, voice by ElevenLabs, product photos by ChatGPT Images, pour clip by Kling, then my Python and FFmpeg render with word timed captions and a contrast check on every caption." data-es="Guion en un archivo de textos, voz de ElevenLabs, fotos de producto de ChatGPT Images, vertido de Kling y luego mi render en Python y FFmpeg con subtítulos sincronizados y control de contraste en cada subtítulo.">Script in one copy file, voice by ElevenLabs, product photos by ChatGPT Images, pour clip by Kling, then my Python and FFmpeg render with word timed captions and a contrast check on every caption.</span></div><div><b data-en="My part" data-es="Mi aporte">My part</b><span data-en="Script, art direction, prompts, edit, sound mix and the batch system. The brand is invented." data-es="Guion, dirección de arte, prompts, edición, mezcla de sonido y el sistema por lotes. La marca es inventada.">Script, art direction, prompts, edit, sound mix and the batch system. The brand is invented.</span></div><div><b data-en="Deliverables" data-es="Entregables">Deliverables</b><span data-en="9:16, 4:5, 1:1 and a 6 second cut, a Spanish version and three new hooks rendered in 2.5 minutes." data-es="9:16, 4:5, 1:1 y un corte de 6 segundos, una versión en español y tres ganchos nuevos renderizados en 2.5 minutos.">9:16, 4:5, 1:1 and a 6 second cut, a Spanish version and three new hooks rendered in 2.5 minutes.</span></div></div>
+  </div>
+</section>
+
 <section class="scene s-static" id="static">
   <div class="wrap wide">
     <span class="tag reveal" data-en="04 · STATIC" data-es="04 · ESTÁTICOS">04 · STATIC</span>
@@ -673,7 +689,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
     <div>
       <span class="tag reveal" data-en="ABOUT" data-es="SOBRE MÍ">ABOUT</span>
       <h2 class="reveal d2" data-en="The eye behind <em>the ads</em>" data-es="La mirada detrás de <em>los anuncios</em>">The eye behind <em>the ads</em></h2>
-      <p class="bio reveal d3" data-en="I am Lumi Laki, an AI video creator based in Nicaragua. My eye comes from more than 15 years as a visual artist and photographer, with exhibitions in Nicaragua, Mexico, Japan and New York. Today I bring that eye to performance creative: strong hooks, tight pacing and clear offers, rendered in batches so a media buyer always has fresh ads to test." data-es="Soy Lumi Laki, creador de video con IA desde Nicaragua. Mi mirada viene de más de 15 años como artista visual y fotógrafo, con exposiciones en Nicaragua, México, Japón y Nueva York. Hoy llevo esa mirada a los anuncios de rendimiento: ganchos fuertes, ritmo preciso y ofertas claras, hechos en tanda para que siempre haya anuncios nuevos que probar.">I am Lumi Laki, an AI video creator based in Nicaragua. My eye comes from more than 15 years as a visual artist and photographer, with exhibitions in Nicaragua, Mexico, Japan and New York. Today I bring that eye to performance creative: strong hooks, tight pacing and clear offers, rendered in batches so a media buyer always has fresh ads to test.</p>
+      <p class="bio reveal d3" data-en="I&#x27;m Lumi Laki, an AI video creator in Nicaragua working US Eastern hours. I script, generate and edit short form ads with Kling, ChatGPT Images and ElevenLabs, and I built a Python and FFmpeg system that turns one ad into new hooks, languages and formats. My eye comes from more than 15 years as a visual artist and photographer. Everything here is spec work for invented brands." data-es="Soy Lumi Laki, creador de video con IA en Nicaragua y trabajo en horario del este de EE. UU. Escribo, genero y edito anuncios cortos con Kling, ChatGPT Images y ElevenLabs, y construí un sistema en Python y FFmpeg que convierte un anuncio en nuevos ganchos, idiomas y formatos. Mi mirada viene de más de 15 años como artista visual y fotógrafo. Todo lo que ves aquí es trabajo de muestra para marcas inventadas.">I&#x27;m Lumi Laki, an AI video creator in Nicaragua working US Eastern hours. I script, generate and edit short form ads with Kling, ChatGPT Images and ElevenLabs, and I built a Python and FFmpeg system that turns one ad into new hooks, languages and formats. My eye comes from more than 15 years as a visual artist and photographer. Everything here is spec work for invented brands.</p>
       <div class="facts reveal d3">
         <div><b data-en="LOCATION" data-es="UBICACIÓN">LOCATION</b><span data-en="Nicaragua · fully remote" data-es="Nicaragua · 100% remoto">Nicaragua · fully remote</span></div>
         <div><b data-en="HOURS" data-es="HORARIO">HOURS</b><span data-en="UTC−6 · works US Eastern hours" data-es="UTC−6 · trabajo en horario del este de EE. UU.">UTC−6 · works US Eastern hours</span></div>
@@ -693,9 +709,9 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
     <p class="free-p" data-en="No paid video, design or editing software. Claude is my code partner. Plug in your paid stack and this pipeline scales from day one." data-es="Sin software de video, diseño ni edición de pago. Claude es mi compañero de código. Conecta tus herramientas de pago y este sistema escala desde el primer día.">No paid video, design or editing software. Claude is my code partner. Plug in your paid stack and this pipeline scales from day one.</p></div>
   <h2 id="endname" aria-label="Lumi Laki"><span class="el" style="--i:0">L</span><span class="el" style="--i:1">U</span><span class="el" style="--i:2">M</span><span class="el" style="--i:3">I</span><span class="el" style="--i:4">&nbsp;</span><span class="el" style="--i:5">L</span><span class="el" style="--i:6">A</span><span class="el" style="--i:7">K</span><span class="el" style="--i:8">I</span></h2>
   <div class="line"></div>
-  <div class="sub" data-en="AI content that <em>sells</em>" data-es="Contenido con IA que <em>vende</em>">AI content that <em>sells</em></div>
+  <div class="sub" data-en="AI ads <em>built to test</em>" data-es="Anuncios con IA <em>listos para probar</em>">AI ads <em>built to test</em></div>
   <div class="pills"><span>UGC</span><span>Motion</span><span>Promo</span><span>Web</span><span>EN · ES</span></div>
-  <a class="contact mailme" href="#contact" data-en="Let's work together" data-es="Trabajemos juntos">Let's work together</a>
+  <a class="contact mailme" href="#contact" data-en="Need fresh ads to test? Email me" data-es="¿Necesitas anuncios para probar? Escríbeme">Need fresh ads to test? Email me</a>
   <div class="mail" id="mailtxt"></div>
   <a class="alink" href="https://www.linkedin.com/in/juanvindel1" target="_blank" rel="noopener" style="margin-top:14px">LinkedIn ↗</a>
 </section>
@@ -806,7 +822,7 @@ addEventListener('load',()=>{sizeParticles();requestAnimationFrame(tick);setLang
 })();
 
 // ===== HERO: titular que cae letra por letra + frase que cambia con máscara =====
-const SW={en:['THAT STOP THE SCROLL','THAT SELL','AT SCALE','IN DAYS, NOT WEEKS'],es:['QUE FRENAN EL SCROLL','QUE VENDEN','EN VOLUMEN','EN DÍAS, NO SEMANAS']};
+const SW={en:['BUILT TO TEST','IN ENGLISH AND SPANISH','AT SCALE','IN DAYS, NOT WEEKS'],es:['LISTOS PARA PROBAR','EN INGLÉS Y ESPAÑOL','EN VOLUMEN','EN DÍAS, NO SEMANAS']};
 function letras(el,txt){let i=0; el.innerHTML=txt.split(' ').map(w=>'<span class="w">'+[...w].map(c=>`<span class="c" style="--i:${i++}">${c}</span>`).join('')+'</span>').join(' ');}
 const slam=document.getElementById('slam'), swap=document.getElementById('swap'); let si=0, swT;
 function slamTxt(){letras(slam,slam.textContent);}
@@ -971,6 +987,7 @@ kslamAll();
 
 // toque suave al pasar por un anuncio o un formato
 if(matchMedia('(hover:hover)').matches) document.querySelectorAll('.adv').forEach(a=>a.addEventListener('mouseenter',()=>{ const n=performance.now(); if(n-SND.last<140) return; SND.last=n; sfx('tap',.06,1.35); }));
+document.getElementById('moreAds').addEventListener('click',()=>{document.getElementById('grid').classList.add('all');});
 document.querySelectorAll('.fmt button,.olang button').forEach(b=>b.addEventListener('click',()=>sfx('tap',.14,1.15)));
 // los contadores suenan al empezar a subir
 (function(){ const st=[...document.querySelectorAll('.stat')]; const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; io.unobserve(e.target); const k=st.indexOf(e.target); setTimeout(()=>sfx('tap',.1,1+k*.12),k*90); }),{threshold:.5}); st.forEach(x=>io.observe(x)); })();
