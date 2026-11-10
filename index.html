@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://lumilaki.github.io/og.jpg">
 <style>
-:root{--bg:#07070c;--ink:#f4f4f8;--mute:#a3a3b8;--lime:#c6ff3d;--violet:#8b5cf6;--cyan:#22d3ee;--coral:#ff5a5f;--blue:#3b5bff}
+:root{--bg:#0b0b0f;--surf:#141418;--ink:#f2f0ea;--mute:#9a978f;--lime:#ff6a3d;--violet:var(--lime);--cyan:var(--lime);--coral:var(--mute);--blue:var(--lime)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden;line-height:1.5}
@@ -44,11 +44,11 @@ nav{transition:background .3s}
 .reveal.in{opacity:1;transform:none}
 .d2{transition-delay:.15s}.d3{transition-delay:.3s}
 
-.s-ugc{background:radial-gradient(circle at 80% 30%,#c6ff3d22,transparent 50%),var(--bg)}
+.s-ugc{background:radial-gradient(circle at 80% 30%,#ff6a3d22,transparent 50%),var(--bg)}
 .s-ugc .tag{background:var(--lime);color:#0b0b10}
 .s-ugc h2 em{color:var(--lime);font-style:normal}
-.phone{position:relative;width:min(320px,72vw);aspect-ratio:9/16;margin:auto;border-radius:26px;overflow:hidden;background:#000;box-shadow:0 0 0 1px #ffffff22,0 30px 80px #000c,0 0 70px #c6ff3d26;transition:box-shadow .4s}
-.phone:hover{box-shadow:0 0 0 1px #c6ff3d66,0 40px 90px #000d,0 0 90px #c6ff3d40}
+.phone{position:relative;width:min(320px,72vw);aspect-ratio:9/16;margin:auto;border-radius:26px;overflow:hidden;background:#000;box-shadow:0 0 0 1px #ffffff22,0 30px 80px #000c,0 0 70px #ff6a3d26;transition:box-shadow .4s}
+.phone:hover{box-shadow:0 0 0 1px #ff6a3d66,0 40px 90px #000d,0 0 90px #ff6a3d40}
 .phone:after{content:"";position:absolute;inset:0;border-radius:26px;pointer-events:none;background:linear-gradient(135deg,#ffffff1c 0%,transparent 32%);mix-blend-mode:screen}
 .phone video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:#000}
 .phone-note{text-align:center;color:var(--mute);font-size:13px;margin-top:14px}
@@ -61,9 +61,9 @@ nav{transition:background .3s}
 .s-ai p{color:var(--mute);margin:12px auto 0;max-width:560px;padding:0 24px}
 
 .s-web{background:var(--bg)}
-.s-web .tag{background:var(--cyan);color:#06222a}
+.s-web .tag{background:var(--cyan);color:var(--surf)}
 .s-web h2 em{color:var(--cyan);font-style:normal}
-.browser{border-radius:16px;overflow:hidden;border:1px solid #ffffff25;background:#11111a;box-shadow:0 30px 80px #22d3ee25}
+.browser{border-radius:16px;overflow:hidden;border:1px solid #ffffff25;background:#11111a;box-shadow:0 30px 80px var(--lime)25}
 .bar{height:34px;background:#1b1b27;display:flex;align-items:center;gap:7px;padding:0 14px}
 .bar b{width:11px;height:11px;border-radius:50%;background:#ffffff35}
 
@@ -78,7 +78,7 @@ nav{transition:background .3s}
 
 /* END CARD */
 .end{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:80px 24px}
-.end h2{font-size:clamp(48px,10vw,120px);font-weight:900;letter-spacing:.06em;text-shadow:0 0 40px #8b5cf6aa}
+.end h2{font-size:clamp(48px,10vw,120px);font-weight:900;letter-spacing:.06em;text-shadow:0 0 40px var(--lime)aa}
 .end .line{width:0;height:3px;background:var(--lime);margin:8px auto 14px;transition:width 1.4s .3s}
 .end.in .line{width:min(520px,70vw)}
 .end .sub{font-size:clamp(20px,3vw,30px);font-style:italic;font-family:Georgia,serif}
@@ -86,7 +86,7 @@ nav{transition:background .3s}
 .pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:28px 0}
 .pills span{padding:7px 14px;border-radius:99px;border:1px solid #ffffff30;font-size:13px;color:var(--mute)}
 .contact{display:inline-block;padding:16px 34px;border-radius:99px;background:var(--lime);color:#0b0b10;font-weight:900;text-decoration:none;font-size:17px;transition:transform .2s,box-shadow .2s}
-.contact:hover{transform:translateY(-3px);box-shadow:0 12px 40px #c6ff3d70}
+.contact:hover{transform:translateY(-3px);box-shadow:0 12px 40px #ff6a3d70}
 .mail{margin-top:14px;color:var(--mute);font-size:14px}
 .endstrip{position:absolute;left:0;right:0;bottom:0;height:34%;overflow:hidden;opacity:.28;-webkit-mask-image:linear-gradient(transparent,#000 40%);mask-image:linear-gradient(transparent,#000 40%)}
 .es-in{display:flex;gap:14px;width:max-content;animation:strip 60s linear infinite}
@@ -96,7 +96,7 @@ nav{transition:background .3s}
 .end{background:radial-gradient(ellipse 50% 40% at 50% 45%,rgba(139,92,246,calc(var(--glow,0)*.35)),#000 70%)!important}
 .end h2{text-shadow:none!important}
 .end .contact{animation:pulse2 2.4s ease-in-out infinite}
-@keyframes pulse2{50%{box-shadow:0 0 0 14px #c6ff3d00,0 0 40px #c6ff3d66}}
+@keyframes pulse2{50%{box-shadow:0 0 0 14px #ff6a3d00,0 0 40px #ff6a3d66}}
 .end>*:not(.endstrip){position:relative;z-index:1}
 footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 
@@ -123,7 +123,7 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .ad.big .adv{max-height:none}
 @media (max-width:900px){.ad.big{grid-column:span 1;grid-row:span 1}}
 .adv{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#15151f;border:1px solid #ffffff1f;cursor:pointer;transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s}
-.adv:hover{transform:translateY(-6px);border-color:var(--lime);box-shadow:0 18px 40px #c6ff3d22}
+.adv:hover{transform:translateY(-6px);border-color:var(--lime);box-shadow:0 18px 40px #ff6a3d22}
 .adv video{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
 .adv,.phone,.hg,.screen{isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black);mask-image:radial-gradient(white,black)}
 .adv .pst{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s;pointer-events:none}
@@ -133,7 +133,7 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .dur{position:absolute;left:10px;top:10px;font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 8px;border-radius:99px;background:#07070cb0;backdrop-filter:blur(8px)}
 .adm{display:flex;flex-wrap:wrap;gap:4px 8px;justify-content:space-between;align-items:baseline;margin-top:12px;font-size:12px;letter-spacing:.16em}
 .adm .dur{position:static;background:none;backdrop-filter:none;padding:0;margin-right:8px;color:var(--lime);font-size:inherit}
-.adt{margin-top:8px;padding:9px 11px;border-left:2px solid var(--violet);background:#0e0e17;border-radius:0 10px 10px 0;font-size:12px;line-height:1.5;color:var(--mute)}.adt b{display:block;color:var(--ink);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:3px}
+.adt{margin-top:8px;padding:9px 11px;border-left:2px solid var(--lime);background:var(--surf);border-radius:0 10px 10px 0;font-size:13px;line-height:1.5;color:var(--mute)}.adt b{display:block;color:var(--ink);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:3px}
 .adm b{font-weight:900}.adm span{color:var(--mute);letter-spacing:.08em}
 .adf{font-size:14px;font-weight:700;margin-top:4px;color:var(--lime)}
 .adh{font-size:13px;color:var(--mute);margin-top:4px;line-height:1.4}
@@ -156,7 +156,7 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .slam .w,.swap .w{display:inline-block;white-space:nowrap}
 .slam .c{display:inline-block;opacity:0;animation:slam .7s cubic-bezier(.2,.9,.2,1.2) forwards;animation-delay:calc(.35s + var(--i)*.05s)}
 @keyframes slam{0%{opacity:0;transform:scale(3.2) translateY(-20px);filter:blur(14px)}60%{opacity:1;filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
-.swap{display:block;height:1.12em;overflow:hidden;white-space:nowrap;font-size:clamp(22px,4.2vw,66px);color:var(--lime);text-shadow:0 0 30px #c6ff3d55;margin-top:.12em}
+.swap{display:block;height:1.12em;overflow:hidden;white-space:nowrap;font-size:clamp(22px,4.2vw,66px);color:var(--lime);text-shadow:0 0 30px #ff6a3d55;margin-top:.12em}
 .swap{overflow:visible!important}
 .swap.dusty{position:relative}
 .swap .dust{position:absolute;left:-15%;top:-60%;width:130%;height:220%;pointer-events:none}
@@ -166,53 +166,56 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .swap.out .c{opacity:0;transform:translateX(var(--dx,0)) scale(.2);transition-duration:.13s,.1s;transition-delay:0s}
 .sub{margin-top:22px;color:var(--mute);font-size:15px;letter-spacing:.06em;opacity:0;animation:fadein .8s 1.2s forwards}
 .hero-cta{display:inline-block;margin-top:26px;padding:14px 26px;border-radius:99px;background:var(--lime);color:#07070c;font-weight:800;text-decoration:none;letter-spacing:.06em;opacity:0;animation:fadein .8s 1.4s forwards;transition:transform .3s,box-shadow .3s}
-.hero-cta:hover{transform:translateY(-3px);box-shadow:0 14px 34px #c6ff3d55}
+.hero-cta:hover{transform:translateY(-3px);box-shadow:0 14px 34px #ff6a3d55}
 @keyframes fadein{to{opacity:1}}
 
 /* MOTION · tipografía cinética ligada al scroll + bandas en movimiento */
-.s-motion{background:var(--blue);flex-direction:column}
-.s-motion .tag{background:#fff;color:var(--blue)}
-.s-motion p{color:#e6eaff;max-width:620px}
+.s-motion{background:var(--surf);flex-direction:column}
+.s-motion .tag{background:var(--lime);color:#0b0b10}
+.s-motion p{color:var(--ink);max-width:620px}
 .wrap.solo{display:block!important;position:relative;z-index:2}
 .kin{font-size:clamp(46px,10.5vw,160px)!important;line-height:.9;white-space:nowrap;margin:6px 0 22px}
 .kin .lt{display:inline-block;will-change:transform}
+.s-motion .wrap{position:relative;z-index:2;padding-top:90px}.s-motion .kin{font-size:clamp(40px,8.4vw,138px)!important;font-stretch:100%}@media (max-width:640px){.s-motion .kin{font-size:8.6vw!important;font-stretch:90%}.s-motion .wrap{padding-top:70px}}.s-motion .bands{opacity:.92}
+.kin .lt{color:var(--ink);animation:kwave 3.2s ease-in-out infinite;animation-delay:calc(var(--i)*.11s)}
+@keyframes kwave{0%,70%,100%{color:var(--ink)}35%{color:var(--lime)}}
 .bands{position:absolute;inset:0;pointer-events:none;z-index:1}
 .bandx{position:absolute;left:-10%;width:120%;padding:14px 0;white-space:nowrap;font-weight:900;font-size:clamp(22px,3vw,40px);letter-spacing:.04em;overflow:hidden}
 .bandx span{display:inline-block;will-change:transform}
-.b-a{top:12%;background:var(--lime);color:#0b0b10;transform:rotate(-6deg)}
-.b-b{bottom:8%;background:#0b0b10;color:#fff;transform:rotate(4deg)}
+.b-a{top:3%;background:var(--lime);color:#0b0b10;transform:rotate(-4deg)}
+.b-b{bottom:3%;background:var(--ink);color:#0b0b10;transform:rotate(3deg)}
 .screen{position:relative;margin-top:34px;aspect-ratio:16/9;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px #0007;border:1px solid #ffffff40;max-width:980px}
 .screen video{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer}
 .snd2{position:absolute;right:14px;bottom:14px;width:42px;height:42px;border-radius:50%;border:0;background:#07070cb0;color:#fff;font-size:17px;cursor:pointer}
 
 /* VARIATIONS · un guion que se multiplica */
-.s-promo{background:var(--coral)}
-.s-promo .tag{background:#0b0b10;color:var(--coral)}
-.s-promo h2,.s-promo p{color:#160608}
-.s-promo h2 em{font-style:normal;color:#fff;text-shadow:2px 0 #160608,-2px 0 #160608,0 2px #160608,0 -2px #160608,1.5px 1.5px #160608,-1.5px -1.5px #160608,1.5px -1.5px #160608,-1.5px 1.5px #160608}
+.s-promo{background:var(--lime)}
+.s-promo .tag{background:#0b0b10;color:var(--lime)}
+.s-promo h2,.s-promo p{color:var(--surf)}
+.s-promo h2 em{font-style:normal;color:#fff;text-shadow:2px 0 var(--surf),-2px 0 var(--surf),0 2px var(--surf),0 -2px var(--surf),1.5px 1.5px var(--surf),-1.5px -1.5px var(--surf),1.5px -1.5px var(--surf),-1.5px 1.5px var(--surf)}
 .chips{display:none;flex-wrap:wrap;gap:8px;margin-top:22px}
-.chips span{font-size:12px;font-weight:800;letter-spacing:.12em;padding:7px 12px;border-radius:99px;background:#160608;color:var(--coral)}
+.chips span{font-size:12px;font-weight:800;letter-spacing:.12em;padding:7px 12px;border-radius:99px;background:var(--surf);color:var(--coral)}
 
 
 .eq{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin:6px 0 22px}
-.eq .f{display:inline-flex;align-items:baseline;gap:6px;padding:8px 14px;border-radius:14px;background:#160608;color:var(--coral);opacity:.18;transform:translateY(16px) scale(.9);transition:opacity .45s,transform .55s cubic-bezier(.2,.9,.2,1.3),background .3s}
+.eq .f{display:inline-flex;align-items:baseline;gap:6px;padding:8px 14px;border-radius:14px;background:var(--surf);color:var(--coral);opacity:.18;transform:translateY(16px) scale(.9);transition:opacity .45s,transform .55s cubic-bezier(.2,.9,.2,1.3),background .3s}
 .eq .f b{font-size:clamp(26px,3vw,40px);font-weight:900;line-height:1}
 .eq .f i{font-style:normal;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
 .eq .f.on{opacity:1;transform:none}
-.eq .f.hot{background:#fff;color:#160608}
-.eq .x{font-size:28px;font-weight:900;color:#160608;opacity:.35}
+.eq .f.hot{background:#fff;color:var(--surf)}
+.eq .x{font-size:28px;font-weight:900;color:var(--surf);opacity:.35}
 .var-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;align-items:end;margin-top:34px}
-.vcard .adv{border-color:#160608}
+.vcard .adv{border-color:var(--surf)}
 .adv.r45{aspect-ratio:4/5}
-.s-promo .adm b{color:#160608}.s-promo .adm span,.s-promo .adh{color:#3a1214}.s-promo .adf{color:#fff}
+.s-promo .adm b{color:var(--surf)}.s-promo .adm span,.s-promo .adh{color:#3a1214}.s-promo .adf{color:#fff}
 .s-promo .eq .f{opacity:1;transform:none}
 @media (max-width:1000px){.var-grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:640px){.var-grid{grid-template-columns:1fr 1fr}}
 /* WEB · demo viva */
 .s-web{background:var(--bg)}
-.s-web .tag{background:var(--cyan);color:#06222a}
+.s-web .tag{background:var(--cyan);color:var(--surf)}
 .s-web h2 em{color:var(--cyan);font-style:normal}
-.browser{border-radius:16px;overflow:hidden;border:1px solid #ffffff25;background:#11111a;box-shadow:0 30px 80px #22d3ee25}
+.browser{border-radius:16px;overflow:hidden;border:1px solid #ffffff25;background:#11111a;box-shadow:0 30px 80px var(--lime)25}
 .bar .url{margin-left:10px;font-size:12px;color:var(--mute);letter-spacing:.06em}
 .live{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0e0f10}
 .live iframe{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform-origin:0 0}
@@ -244,19 +247,19 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 .s-hook p{color:var(--mute);max-width:640px}
 .vs{display:grid;grid-template-columns:1fr auto 1fr;gap:28px;align-items:center;max-width:860px;margin:40px auto 0}
 .side{margin:0}.side .adv{max-width:300px;margin:auto}
-.side.weak .adv{border-color:#ff5a5f88}
-.side.strong .adv{border-color:var(--lime);box-shadow:0 0 50px #c6ff3d33}
+.side.weak .adv{border-color:var(--mute)88}
+.side.strong .adv{border-color:var(--lime);box-shadow:0 0 50px #ff6a3d33}
 .side figcaption{max-width:300px;margin:14px auto 0;font-size:14px}
 .side figcaption b{display:block;font-size:15px;letter-spacing:.06em}
 .weak figcaption b{color:var(--coral)}.strong figcaption b{color:var(--lime)}
 .side q{display:block;margin:6px 0;font-weight:700}
 .side figcaption span{color:var(--mute)}
 .vsb{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:22px;background:var(--lime);color:#07070c;animation:vsp 1.8s ease-in-out infinite}
-@keyframes vsp{50%{transform:scale(1.15) rotate(-8deg);box-shadow:0 0 40px #c6ff3d88}}
+@keyframes vsp{50%{transform:scale(1.15) rotate(-8deg);box-shadow:0 0 40px #ff6a3d88}}
 /* botón fijo de contacto */
 .hire{position:fixed;right:22px;bottom:22px;z-index:30;padding:13px 22px;border-radius:99px;background:var(--lime);color:#07070c;font-weight:900;letter-spacing:.06em;text-decoration:none;box-shadow:0 12px 30px #0008;transform:translateY(120px);transition:transform .5s cubic-bezier(.2,.9,.2,1.2)}
 .hire.show{transform:none}
-@media (max-width:700px){.hire{padding:10px 16px;font-size:13px;right:14px;bottom:14px}}.hire:hover{box-shadow:0 12px 34px #c6ff3d66}
+@media (max-width:700px){.hire{padding:10px 16px;font-size:13px;right:14px;bottom:14px}}.hire:hover{box-shadow:0 12px 34px #ff6a3d66}
 /* celular: menos peso */
 @media (max-width:700px){.col:nth-child(n+4){display:none}.stats{grid-template-columns:1fr 1fr}.vs{grid-template-columns:1fr 1fr;gap:12px}.vsb{display:none}.side figcaption span{display:none}}
 .hero h1.mega{position:static;bottom:auto;font-size:inherit;letter-spacing:-.01em;color:var(--ink);font-weight:900;padding:0;text-align:center}
@@ -268,7 +271,7 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 /* barra de un segundo */
 .sec1{display:flex;align-items:center;gap:14px;margin:4px 0 22px;max-width:640px}
 .sec1-bar{flex:1;height:6px;border-radius:6px;background:#ffffff18;overflow:hidden}
-.sec1-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--coral),var(--lime));box-shadow:0 0 14px #c6ff3d88}
+.sec1-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--coral),var(--lime));box-shadow:0 0 14px #ff6a3d88}
 .sec1 b{font-variant-numeric:tabular-nums;font-size:20px;font-weight:900;color:var(--lime);min-width:3.2em;display:inline-block}
 .sec1 span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
 .sec1.flash b{animation:flash .4s}
@@ -276,20 +279,20 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 /* how it works animado */
 .steps h3.kslam{font-size:clamp(30px,4vw,44px);font-weight:900;text-transform:uppercase;text-align:center;margin-bottom:50px}
 .flowgrid{position:relative}
-.flowline{position:absolute;left:8%;right:8%;top:50%;height:2px;background:repeating-linear-gradient(90deg,#c6ff3d55 0 10px,transparent 10px 20px);z-index:0;background-size:20px 2px;animation:dash 1s linear infinite}
+.flowline{position:absolute;left:8%;right:8%;top:50%;height:2px;background:repeating-linear-gradient(90deg,#ff6a3d55 0 10px,transparent 10px 20px);z-index:0;background-size:20px 2px;animation:dash 1s linear infinite}
 @keyframes dash{to{background-position:20px 0}}
-.flowdot{position:absolute;top:50%;left:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--lime);box-shadow:0 0 24px 6px #c6ff3daa;opacity:0}
+.flowdot{position:absolute;top:50%;left:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--lime);box-shadow:0 0 24px 6px #ff6a3daa;opacity:0}
 .flowgrid.run .flowdot{animation:travel 3.6s cubic-bezier(.6,0,.4,1) infinite}
 @keyframes travel{0%{left:0;opacity:0}6%{opacity:1}94%{opacity:1}100%{left:100%;opacity:0}}
 .flowgrid .step{position:relative;z-index:1;transition:transform .5s cubic-bezier(.2,.9,.2,1.3),border-color .4s,box-shadow .4s}
 .step .n{transition:color .4s,text-shadow .4s}
-.step.lit{transform:translateY(-10px) scale(1.03);border-color:var(--lime);box-shadow:0 18px 50px #c6ff3d22}
-.step.lit .n{color:var(--lime);text-shadow:0 0 24px #c6ff3d88}
-@media (max-width:800px){.flowline{left:50%;right:auto;top:4%;bottom:4%;width:2px;height:auto;background:repeating-linear-gradient(180deg,#c6ff3d55 0 10px,transparent 10px 20px)}.flowgrid.run .flowdot{animation:none;opacity:0}}
+.step.lit{transform:translateY(-10px) scale(1.03);border-color:var(--lime);box-shadow:0 18px 50px #ff6a3d22}
+.step.lit .n{color:var(--lime);text-shadow:0 0 24px #ff6a3d88}
+@media (max-width:800px){.flowline{left:50%;right:auto;top:4%;bottom:4%;width:2px;height:auto;background:repeating-linear-gradient(180deg,#ff6a3d55 0 10px,transparent 10px 20px)}.flowgrid.run .flowdot{animation:none;opacity:0}}
 .about{padding:120px 0;border-top:1px solid #ffffff12}
 .about .tag{background:var(--violet);color:#fff}
 .about-g{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start}
-.about .mono{width:132px;height:132px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:44px;letter-spacing:.04em;color:var(--lime);background:#0e0e16;border:1px solid #c6ff3d44;box-shadow:0 0 60px #8b5cf622}
+.about .mono{width:132px;height:132px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:44px;letter-spacing:.04em;color:var(--lime);background:#0e0e16;border:1px solid #ff6a3d44;box-shadow:0 0 60px var(--lime)22}
 .about h2{font-size:clamp(34px,5vw,58px);font-weight:900;line-height:1.05;margin:10px 0 18px}.about h2 em{color:var(--lime);font-style:normal}
 .about .bio{font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#d9d9e4;max-width:720px}
 .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:30px 0;max-width:720px}
@@ -323,10 +326,10 @@ footer{text-align:center;color:#6b6b80;font-size:12px;padding:30px}
 #intro.fuera .raya{opacity:0;transition:opacity .25s}
 @media (prefers-reduced-motion:reduce){#intro{display:none}}
 body:not(.ready) .slam .c,body:not(.ready) .kick,body:not(.ready) .sub,body:not(.ready) .hero-cta{animation-play-state:paused}
-.proc{margin:0 0 50px}.procv{margin-top:0;max-width:none;border-color:#c6ff3d44;box-shadow:0 30px 80px #000a,0 0 60px #8b5cf622}
+.proc{margin:0 0 50px}.procv{margin-top:0;max-width:none;border-color:#ff6a3d44;box-shadow:0 30px 80px #000a,0 0 60px var(--lime)22}
 .proc figcaption{color:var(--mute);font-size:14px;margin-top:12px}
-.chg{display:block;width:max-content;max-width:100%;margin:0 auto 10px;text-align:center;font-size:11px;font-weight:900;letter-spacing:.14em;padding:7px 12px;border-radius:99px;background:#160608;color:#fff}
-.vcard:first-child .chg{background:#ffffffe6;color:#160608}
+.chg{display:block;width:max-content;max-width:100%;margin:0 auto 10px;text-align:center;font-size:11px;font-weight:900;letter-spacing:.14em;padding:7px 12px;border-radius:99px;background:var(--surf);color:#fff}
+.vcard:first-child .chg{background:#ffffffe6;color:var(--surf)}
 .var-grid{align-items:start!important}
 .olang{display:flex;gap:6px;justify-content:center;margin-top:14px}
 .olang button{border:1px solid #ffffff40;background:none;color:var(--ink);font-weight:800;letter-spacing:.12em;padding:7px 16px;border-radius:99px;cursor:pointer}
@@ -338,7 +341,7 @@ body:not(.ready) .slam .c,body:not(.ready) .kick,body:not(.ready) .sub,body:not(
 .tool:hover{border-color:var(--lime);transform:translateY(-3px)}
 .tool b{font-size:15px;font-weight:900}.tool i{font-style:normal;font-size:12px;color:var(--mute)}
 .free{max-width:820px;margin:0 auto 7vh}
-.free-h{font-size:clamp(26px,3.6vw,46px);font-weight:900;color:var(--lime);line-height:1.1;text-shadow:0 0 30px #c6ff3d44}
+.free-h{font-size:clamp(26px,3.6vw,46px);font-weight:900;color:var(--lime);line-height:1.1;text-shadow:0 0 30px #ff6a3d44}
 .free-p{color:var(--mute);font-size:clamp(15px,1.4vw,18px);margin:14px auto 0;max-width:620px}
 .fmt{display:flex;align-items:center;gap:8px;margin:0 0 20px;flex-wrap:wrap}
 .fmt span{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-right:6px}
@@ -346,16 +349,16 @@ body:not(.ready) .slam .c,body:not(.ready) .kick,body:not(.ready) .sub,body:not(
 .fmt button.on{background:var(--lime);color:#07070c;border-color:var(--lime)}
 #grid .adv{transition:aspect-ratio .45s cubic-bezier(.2,.8,.2,1),transform .5s,border-color .3s}
 #grid.f-4x5 .adv{aspect-ratio:4/5}#grid.f-1x1 .adv{aspect-ratio:1/1}
-.s-avatar{background:radial-gradient(circle at 20% 40%,#22d3ee22,transparent 50%),var(--bg)}
-.s-avatar .tag{background:var(--cyan);color:#06222a}
+.s-avatar{background:radial-gradient(circle at 20% 40%,var(--lime)22,transparent 50%),var(--bg)}
+.s-avatar .tag{background:var(--cyan);color:var(--surf)}
 .s-avatar h2 em{color:var(--cyan);font-style:normal}
 .hg{position:relative;cursor:pointer;width:min(320px,72vw);aspect-ratio:9/16;margin:auto;border-radius:26px;overflow:hidden;background:#000;
-  box-shadow:0 0 0 1px #ffffff22,0 30px 80px #000c,0 0 70px #22d3ee2e;transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
-.hg:hover{box-shadow:0 0 0 1px #22d3ee66,0 40px 90px #000d,0 0 90px #22d3ee44}
+  box-shadow:0 0 0 1px #ffffff22,0 30px 80px #000c,0 0 70px var(--lime)2e;transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.hg:hover{box-shadow:0 0 0 1px var(--lime)66,0 40px 90px #000d,0 0 90px var(--lime)44}
 .hg:after{content:"";position:absolute;inset:0;border-radius:26px;pointer-events:none;background:linear-gradient(135deg,#ffffff1c 0%,transparent 32%);mix-blend-mode:screen}
 .hg img,.hg iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;border:0;background:#000}
-.hg-play{position:absolute;left:50%;top:50%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;border:0;background:#22d3eeee;color:#06222a;font-size:28px;cursor:pointer;box-shadow:0 0 0 0 #22d3ee88;animation:hgp 2s infinite}
-@keyframes hgp{70%{box-shadow:0 0 0 22px #22d3ee00}100%{box-shadow:0 0 0 0 #22d3ee00}}
+.hg-play{position:absolute;left:50%;top:50%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;border:0;background:var(--lime)ee;color:var(--surf);font-size:28px;cursor:pointer;box-shadow:0 0 0 0 var(--lime)88;animation:hgp 2s infinite}
+@keyframes hgp{70%{box-shadow:0 0 0 22px var(--lime)00}100%{box-shadow:0 0 0 0 var(--lime)00}}
 .hg-link{display:inline-block;margin-top:8px;color:var(--cyan);font-weight:800;text-decoration:none}
 .hg-link:hover{text-decoration:underline}
 .navr{display:flex;gap:10px;align-items:center}
@@ -372,7 +375,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 #lb{position:fixed;inset:0;z-index:9999;background:#05050ae6;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transition:opacity .35s}
 #lb.open{opacity:1}
 #lb[hidden]{display:none}
-.lbw{position:fixed;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 30px 90px #000,0 0 0 1px #ffffff22,0 0 80px #c6ff3d22;transform-origin:0 0;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-radius .45s;will-change:transform}
+.lbw{position:fixed;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 30px 90px #000,0 0 0 1px #ffffff22,0 0 80px #ff6a3d22;transform-origin:0 0;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-radius .45s;will-change:transform}
 .lbw img,.lbw video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
 .lbw canvas,.lbw iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .35s}.lbw canvas.ok,.lbw iframe.ok{opacity:1}
 .lbw video{position:absolute;left:0;top:0;width:2px!important;height:2px!important;opacity:.01;pointer-events:none}
@@ -381,6 +384,17 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 #lbbar i{display:block;height:100%;width:0;background:var(--lime)}
 #lbp{position:absolute;inset:0;margin:auto;width:70px;height:70px;border-radius:50%;background:#0009;color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .25s}
 #lb.paused #lbp{opacity:1}
+
+/* 2026-11-10 diseño: fuentes libres (SIL OFL) servidas desde el sitio */
+@font-face{font-family:Inter;src:url(fonts/inter-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:Archivo;src:url(fonts/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono-latin-wght-normal.woff2) format("woff2");font-weight:100 800;font-display:swap}
+body{font-family:Inter,-apple-system,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+h1,h2,h3,.mega,.slam,.swap{font-family:Archivo,Inter,sans-serif;font-stretch:112%;letter-spacing:-.01em}
+.tag,.kick,.stat b,.stat i,.dur,.adm,.adf,.tools-h,.fmt span,.case-grid b,figcaption{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
+.ad .adv{box-shadow:0 1px 2px rgba(0,0,0,.45),0 14px 34px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.07)}
+.hire{transition:opacity .3s,transform .3s;box-shadow:0 0 0 2px #0b0b0f,0 8px 24px rgba(0,0,0,.35)}.hire.hide{opacity:0;transform:translateY(12px);pointer-events:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body id="top">
@@ -449,6 +463,14 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <p class="adh">“Hear that? That&#x27;s ten seconds to real hydration.”</p>
       <p class="adt" data-en="<b>Test plan</b> Audience: Fitness fans on TikTok · Watch: 3 second view rate · Next test: ASMR pour vs voice first" data-es="<b>Plan de prueba</b> Público: Fans del fitness en TikTok · Métrica: vistas de 3 segundos · Siguiente prueba: sonido ASMR contra voz primero"><b>Test plan</b> Audience: Fitness fans on TikTok · Watch: 3 second view rate · Next test: ASMR pour vs voice first</p>
     </article>
+    <article class="ad reveal" style="transition-delay:0.24s">
+      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2.jpg" alt="">
+        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
+      <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
+      <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
+      <p class="adh">“Four pills. Every single morning?”</p>
+      <p class="adt" data-en="<b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit" data-es="<b>Plan de prueba</b> Público: Mujeres cansadas de tomar pastillas diario · Métrica: CTR · Siguiente prueba: dolor de las pastillas contra beneficio de brillo"><b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit</p>
+    </article>
     <article class="ad reveal" style="transition-delay:0.08s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v5.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v5.jpg" alt="">
         <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:15</span></div>
@@ -472,14 +494,6 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
       <p class="adf" data-en="ASMR · sound first hook · 16 s" data-es="ASMR · gancho de sonido · 16 s">ASMR · sound first hook · 16 s</p>
       <p class="adh">“Hear that? That&#x27;s your whole glow routine, in one jar.”</p>
       <p class="adt" data-en="<b>Test plan</b> Audience: Women 25 to 44 into skincare · Watch: 3 second view rate · Next test: sound first vs text first opener" data-es="<b>Plan de prueba</b> Público: Mujeres de 25 a 44 interesadas en el cuidado de la piel · Métrica: vistas de 3 segundos · Siguiente prueba: abrir con sonido contra abrir con texto"><b>Test plan</b> Audience: Women 25 to 44 into skincare · Watch: 3 second view rate · Next test: sound first vs text first opener</p>
-    </article>
-    <article class="ad extra reveal" style="transition-delay:0.24s">
-      <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2.jpg" alt="">
-        <button class="snd" type="button" aria-label="Sound">🔇</button><span class="dur">0:14</span></div>
-      <div class="adm"><b>VELYRA</b><span>EN · Jessica</span></div>
-      <p class="adf" data-en="Kinetic type · question hook · 14 s" data-es="Tipografía animada · gancho con pregunta · 14 s">Kinetic type · question hook · 14 s</p>
-      <p class="adh">“Four pills. Every single morning?”</p>
-      <p class="adt" data-en="<b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit" data-es="<b>Plan de prueba</b> Público: Mujeres cansadas de tomar pastillas diario · Métrica: CTR · Siguiente prueba: dolor de las pastillas contra beneficio de brillo"><b>Test plan</b> Audience: Women tired of daily pills · Watch: CTR · Next test: pill pain point vs glow benefit</p>
     </article>
     <article class="ad extra reveal" style="transition-delay:0.08s">
       <div class="adv"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline data-src="ads/v2es.mp4" muted loop playsinline preload="none"></video><img loading="lazy" decoding="async" class="pst" src="ads/v2es.jpg" alt="">
@@ -528,52 +542,9 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 </section>
 
 
-<section class="scene s-ugc">
-  <div class="wrap">
-    <div>
-      <span class="tag reveal" data-en="01 · VIDEO" data-es="01 · VIDEO">01 · VIDEO</span>
-      <h2 class="reveal d2" data-en="Faceless <em>UGC</em> ads" data-es="Anuncios <em>UGC</em> sin rostro">Faceless <em>UGC</em> ads</h2>
-      <p class="reveal d3" data-en="Short vertical ads for TikTok, Reels and Shorts. Voiceover, kinetic captions, music and a clear hook in the first seconds. No face needed." data-es="Anuncios verticales cortos para TikTok, Reels y Shorts. Voz, subtítulos animados, música y un gancho claro en los primeros segundos. Sin rostro.">Short vertical ads for TikTok, Reels and Shorts. Voiceover, kinetic captions, music and a clear hook in the first seconds. No face needed.</p>
-    </div>
-    <div class="reveal d2">
-      <div class="phone"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline id="olivo" src="ads/casa-olivo-en.mp4" poster="ads/casa-olivo-en.jpg" muted loop playsinline preload="none"></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
-      <div class="olang" id="olang"><button type="button" class="on" data-v="en">EN</button><button type="button" data-v="es">ES</button></div>
-      <div class="phone-note" data-en="Real estate ad for a fictional property, in English and Spanish. Tap for sound." data-es="Anuncio inmobiliario para una propiedad ficticia, en inglés y español. Toca para oír.">Real estate ad for a fictional property, in English and Spanish. Tap for sound.</div>
-    </div>
-  </div>
-</section>
-
-<section class="scene s-avatar" id="avatar">
-  <div class="wrap">
-    <div>
-      <span class="tag reveal" data-en="AI AVATAR" data-es="AVATAR IA">AI AVATAR</span>
-      <h2 class="reveal d2" data-en="Talking <em>avatar</em> ads" data-es="Anuncios con <em>avatar</em>">Talking <em>avatar</em> ads</h2>
-      <p class="reveal d3" data-en="UGC style testimonial for KINETA with a HeyGen avatar: my script, framing and voice direction. Made on the free plan, so the HeyGen watermark stays. With your HeyGen account it plugs straight into the same pipeline as the ads above." data-es="Testimonio estilo UGC para KINETA con un avatar de HeyGen: mi guion, encuadre y dirección de voz. Hecho con el plan gratis, por eso queda la marca de agua de HeyGen. Con tu cuenta de HeyGen se conecta directo al mismo sistema de los anuncios de arriba.">UGC style testimonial for KINETA with a HeyGen avatar: my script, framing and voice direction. Made on the free plan, so the HeyGen watermark stays. With your HeyGen account it plugs straight into the same pipeline as the ads above.</p>
-      <a class="hg-link reveal d3" href="https://app.heygen.com/videos/kineta-avatar-321ba0e971fc4c0f853841848cdff069" target="_blank" rel="noopener" data-en="Watch on HeyGen ↗" data-es="Ver en HeyGen ↗">Watch on HeyGen ↗</a>
-    </div>
-    <div class="reveal d2">
-      <div class="hg" id="hg"><img loading="lazy" decoding="async" src="ads/heygen.jpg" alt="HeyGen avatar ad for KINETA"><button class="hg-play" type="button" aria-label="Play">▶</button></div>
-      <div class="phone-note" data-en="Tap to play · 28 s · HeyGen free plan" data-es="Toca para reproducir · 28 s · plan gratis de HeyGen">Tap to play · 28 s · HeyGen free plan</div>
-    </div>
-  </div>
-</section>
-
-<section class="scene s-motion" id="motion">
-  <div class="bands" aria-hidden="true">
-    <div class="bandx b-a"><span>KINETIC TYPE · TRANSITIONS · 3D · CAPTIONS · LOGO REVEALS · KINETIC TYPE · TRANSITIONS · 3D · CAPTIONS · LOGO REVEALS ·</span></div>
-    <div class="bandx b-b"><span>MASK REVEALS · CAMERA MOVES · BEAT SYNC · MORPHS · MASK REVEALS · CAMERA MOVES · BEAT SYNC · MORPHS ·</span></div>
-  </div>
-  <div class="wrap solo">
-    <span class="tag reveal" data-en="02 · MOTION" data-es="02 · ANIMACIÓN">02 · MOTION</span>
-    <h2 class="kin" id="kin" aria-label="Motion graphics"><span class="lt" style="--i:0">M</span><span class="lt" style="--i:1">O</span><span class="lt" style="--i:2">T</span><span class="lt" style="--i:3">I</span><span class="lt" style="--i:4">O</span><span class="lt" style="--i:5">N</span><span class="lt" style="--i:6">&nbsp;</span><span class="lt" style="--i:7">G</span><span class="lt" style="--i:8">R</span><span class="lt" style="--i:9">A</span><span class="lt" style="--i:10">P</span><span class="lt" style="--i:11">H</span><span class="lt" style="--i:12">I</span><span class="lt" style="--i:13">C</span><span class="lt" style="--i:14">S</span></h2>
-    <p class="reveal d2" data-en="Brand reels, explainers and kinetic typography synced to voice and beat. This reel was designed and rendered end to end with code and AI." data-es="Reels de marca, videos explicativos y tipografía cinética sincronizada con la voz y el ritmo. Este reel se diseñó y renderizó de principio a fin con código e IA.">Brand reels, explainers and kinetic typography synced to voice and beat. This reel was designed and rendered end to end with code and AI.</p>
-    <div class="screen reveal d2"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline src="ads/reel.mp4" poster="ads/reel.jpg" muted loop playsinline preload="none" data-auto></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
-  </div>
-</section>
-
 <section class="scene s-promo" id="variations">
   <div class="wrap solo">
-    <span class="tag reveal" data-en="03 · VARIATIONS" data-es="03 · VARIACIONES">03 · VARIATIONS</span>
+    <span class="tag reveal" data-en="01 · VARIATIONS" data-es="01 · VARIACIONES">01 · VARIATIONS</span>
     <h2 class="reveal d2" data-en="One ad. <em>Six real versions.</em>" data-es="Un anuncio. <em>Seis versiones reales.</em>">One ad. <em>Six real versions.</em></h2>
     <div class="eq reveal d3"><span class="f on"><b>3</b><i data-en="hooks" data-es="ganchos">hooks</i></span><span class="f on"><b>2</b><i data-en="languages" data-es="idiomas">languages</i></span><span class="f on"><b>2</b><i data-en="formats" data-es="formatos">formats</i></span><span class="f on hot"><b>2.5</b><i data-en="min batch" data-es="min el lote">min batch</i></span></div>
     <p class="reveal d3" data-en="The KINETA ad from the hook test, rendered again by my pipeline with new hooks, a Spanish voice, a 4:5 feed version and a 6 second cut. The five new files took 2.5 minutes of render on a laptop. Tap any version for sound." data-es="El anuncio de KINETA de la prueba de gancho, renderizado otra vez por mi sistema con ganchos nuevos, voz en español, versión 4:5 para el feed y un corte de 6 segundos. Los cinco archivos nuevos tardaron 2,5 minutos de render en una laptop. Toca cualquier versión para oírla.">The KINETA ad from the hook test, rendered again by my pipeline with new hooks, a Spanish voice, a 4:5 feed version and a 6 second cut. The five new files took 2.5 minutes on a laptop. Tap any version for sound.</p>
@@ -618,16 +589,9 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
   </div>
 </section>
 
-<section class="scene s-ai">
-  <canvas id="particles"></canvas>
-  <h2 class="reveal" data-en="Made with AI. Directed with taste." data-es="Hecho con IA. Dirigido con criterio.">Made with AI. Directed with taste.</h2>
-  <p class="reveal d2" data-en="Move your cursor through the words. Click or tap to send a shockwave." data-es="Pasa el cursor por las palabras. Haz clic o toca para lanzar una onda.">Move your cursor through the words. Click or tap to send a shockwave.</p>
-</section>
-
-
 <section class="scene s-hook" id="hook">
   <div class="wrap solo">
-    <span class="tag reveal" data-en="HOOK TEST" data-es="PRUEBA DE GANCHO">HOOK TEST</span>
+    <span class="tag reveal" data-en="02 · HOOK TEST" data-es="02 · PRUEBA DE GANCHO">02 · HOOK TEST</span>
     <h2 class="kslam" id="hookh" data-en="Same ad. <em>Different first second.</em>" data-es="Mismo anuncio. <em>Otro primer segundo.</em>">Same ad. <em>Different first second.</em></h2>
     <div class="sec1" aria-hidden="true"><div class="sec1-bar"><i id="secfill"></i></div><b id="secnum">0.0s</b><span data-en="this is one second" data-es="esto es un segundo">this is one second</span></div>
     <p class="reveal d3" data-en="Most people decide in the first second whether to keep watching. Here is the same KINETA ad with a weak hook and with the hook I would ship. Tap either one for sound." data-es="La mayoría decide en el primer segundo si sigue mirando. Este es el mismo anuncio de KINETA con un gancho débil y con el gancho que yo entregaría. Toca cualquiera para oírlo.">Most people decide in the first second whether to keep watching. Here is the same KINETA ad with a weak hook and with the hook I would ship. Tap either one for sound.</p>
@@ -640,9 +604,59 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
     </div>
   </div>
 </section>
+
+<section class="scene s-ugc">
+  <div class="wrap">
+    <div>
+      <span class="tag reveal" data-en="03 · VIDEO" data-es="03 · VIDEO">03 · VIDEO</span>
+      <h2 class="reveal d2" data-en="Faceless <em>UGC</em> ads" data-es="Anuncios <em>UGC</em> sin rostro">Faceless <em>UGC</em> ads</h2>
+      <p class="reveal d3" data-en="Short vertical ads for TikTok, Reels and Shorts. Voiceover, kinetic captions, music and a clear hook in the first seconds. No face needed." data-es="Anuncios verticales cortos para TikTok, Reels y Shorts. Voz, subtítulos animados, música y un gancho claro en los primeros segundos. Sin rostro.">Short vertical ads for TikTok, Reels and Shorts. Voiceover, kinetic captions, music and a clear hook in the first seconds. No face needed.</p>
+    </div>
+    <div class="reveal d2">
+      <div class="phone"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline id="olivo" src="ads/casa-olivo-en.mp4" poster="ads/casa-olivo-en.jpg" muted loop playsinline preload="none"></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
+      <div class="olang" id="olang"><button type="button" class="on" data-v="en">EN</button><button type="button" data-v="es">ES</button></div>
+      <div class="phone-note" data-en="Real estate ad for a fictional property, in English and Spanish. Tap for sound." data-es="Anuncio inmobiliario para una propiedad ficticia, en inglés y español. Toca para oír.">Real estate ad for a fictional property, in English and Spanish. Tap for sound.</div>
+    </div>
+  </div>
+</section>
+
+<section class="scene s-avatar" id="avatar">
+  <div class="wrap">
+    <div>
+      <span class="tag reveal" data-en="04 · AI AVATAR" data-es="04 · AVATAR IA">04 · AI AVATAR</span>
+      <h2 class="reveal d2" data-en="Talking <em>avatar</em> ads" data-es="Anuncios con <em>avatar</em>">Talking <em>avatar</em> ads</h2>
+      <p class="reveal d3" data-en="UGC style testimonial for KINETA with a HeyGen avatar: my script, framing and voice direction. Made on the free plan, so the HeyGen watermark stays. With your HeyGen account it plugs straight into the same pipeline as the ads above." data-es="Testimonio estilo UGC para KINETA con un avatar de HeyGen: mi guion, encuadre y dirección de voz. Hecho con el plan gratis, por eso queda la marca de agua de HeyGen. Con tu cuenta de HeyGen se conecta directo al mismo sistema de los anuncios de arriba.">UGC style testimonial for KINETA with a HeyGen avatar: my script, framing and voice direction. Made on the free plan, so the HeyGen watermark stays. With your HeyGen account it plugs straight into the same pipeline as the ads above.</p>
+      <a class="hg-link reveal d3" href="https://app.heygen.com/videos/kineta-avatar-321ba0e971fc4c0f853841848cdff069" target="_blank" rel="noopener" data-en="Watch on HeyGen ↗" data-es="Ver en HeyGen ↗">Watch on HeyGen ↗</a>
+    </div>
+    <div class="reveal d2">
+      <div class="hg" id="hg"><img loading="lazy" decoding="async" src="ads/heygen.jpg" alt="HeyGen avatar ad for KINETA"><button class="hg-play" type="button" aria-label="Play">▶</button></div>
+      <div class="phone-note" data-en="Tap to play · 28 s · HeyGen free plan" data-es="Toca para reproducir · 28 s · plan gratis de HeyGen">Tap to play · 28 s · HeyGen free plan</div>
+    </div>
+  </div>
+</section>
+
+<section class="scene s-motion" id="motion">
+  <div class="bands" aria-hidden="true">
+    <div class="bandx b-a"><span>KINETIC TYPE · TRANSITIONS · 3D · CAPTIONS · LOGO REVEALS · KINETIC TYPE · TRANSITIONS · 3D · CAPTIONS · LOGO REVEALS ·</span></div>
+    <div class="bandx b-b"><span>MASK REVEALS · CAMERA MOVES · BEAT SYNC · MORPHS · MASK REVEALS · CAMERA MOVES · BEAT SYNC · MORPHS ·</span></div>
+  </div>
+  <div class="wrap solo">
+    <span class="tag reveal" data-en="05 · MOTION" data-es="05 · ANIMACIÓN">05 · MOTION</span>
+    <h2 class="kin" id="kin" aria-label="Motion graphics"><span class="lt" style="--i:0">M</span><span class="lt" style="--i:1">O</span><span class="lt" style="--i:2">T</span><span class="lt" style="--i:3">I</span><span class="lt" style="--i:4">O</span><span class="lt" style="--i:5">N</span><span class="lt" style="--i:6">&nbsp;</span><span class="lt" style="--i:7">G</span><span class="lt" style="--i:8">R</span><span class="lt" style="--i:9">A</span><span class="lt" style="--i:10">P</span><span class="lt" style="--i:11">H</span><span class="lt" style="--i:12">I</span><span class="lt" style="--i:13">C</span><span class="lt" style="--i:14">S</span></h2>
+    <p class="reveal d2" data-en="Brand reels, explainers and kinetic typography synced to voice and beat. This reel was designed and rendered end to end with code and AI." data-es="Reels de marca, videos explicativos y tipografía cinética sincronizada con la voz y el ritmo. Este reel se diseñó y renderizó de principio a fin con código e IA.">Brand reels, explainers and kinetic typography synced to voice and beat. This reel was designed and rendered end to end with code and AI.</p>
+    <div class="screen reveal d2"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline src="ads/reel.mp4" poster="ads/reel.jpg" muted loop playsinline preload="none" data-auto></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
+  </div>
+</section>
+
+
+
+
+
+
+
 <section class="scene s-case" id="case">
   <div class="wrap">
-    <span class="tag reveal" data-en="CASE STUDY" data-es="CASO DE ESTUDIO">CASE STUDY</span>
+    <span class="tag reveal" data-en="06 · CASE STUDY" data-es="06 · CASO DE ESTUDIO">06 · CASE STUDY</span>
     <h2 class="reveal d2" data-en="KINETA · <em>question hook</em>" data-es="KINETA · <em>gancho de pregunta</em>">KINETA · <em>question hook</em></h2>
     <p class="reveal d3" data-en="Spec work for an invented brand. No ad spend or results yet: this shows how I would build and test it." data-es="Trabajo de muestra para una marca inventada. Aún sin inversión ni resultados: muestra cómo lo construiría y probaría.">Spec work for an invented brand. No ad spend or results yet: this shows how I would build and test it.</p>
     <div class="case-grid reveal"><div><b data-en="Goal" data-es="Objetivo">Goal</b><span data-en="Test a question hook against a weak, brand first opener." data-es="Probar un gancho de pregunta contra una apertura débil que empieza con la marca.">Test a question hook against a weak, brand first opener.</span></div><div><b data-en="Audience" data-es="Público">Audience</b><span data-en="Runners and endurance athletes who drink plain water after long workouts." data-es="Corredores y atletas de resistencia que toman solo agua después de entrenar largo.">Runners and endurance athletes who drink plain water after long workouts.</span></div><div><b data-en="Concept" data-es="Concepto">Concept</b><span data-en="Plain water. After a ninety minute workout? The problem on screen first, then the pour, then the offer." data-es="¿Agua sola después de noventa minutos? Primero el problema en pantalla, luego el vertido y después la oferta.">Plain water. After a ninety minute workout? The problem on screen first, then the pour, then the offer.</span></div><div><b data-en="Process" data-es="Proceso">Process</b><span data-en="Script in one copy file, voice by ElevenLabs, product photos by ChatGPT Images, pour clip by Kling, then my Python and FFmpeg render with word timed captions and a contrast check on every caption." data-es="Guion en un archivo de textos, voz de ElevenLabs, fotos de producto de ChatGPT Images, vertido de Kling y luego mi render en Python y FFmpeg con subtítulos sincronizados y control de contraste en cada subtítulo.">Script in one copy file, voice by ElevenLabs, product photos by ChatGPT Images, pour clip by Kling, then my Python and FFmpeg render with word timed captions and a contrast check on every caption.</span></div><div><b data-en="My part" data-es="Mi aporte">My part</b><span data-en="Script, art direction, prompts, edit, sound mix and the batch system. The brand is invented." data-es="Guion, dirección de arte, prompts, edición, mezcla de sonido y el sistema por lotes. La marca es inventada.">Script, art direction, prompts, edit, sound mix and the batch system. The brand is invented.</span></div><div><b data-en="Deliverables" data-es="Entregables">Deliverables</b><span data-en="9:16, 4:5, 1:1 and a 6 second cut, a Spanish version and three new hooks rendered in 2.5 minutes." data-es="9:16, 4:5, 1:1 y un corte de 6 segundos, una versión en español y tres ganchos nuevos renderizados en 2.5 minutos.">9:16, 4:5, 1:1 and a 6 second cut, a Spanish version and three new hooks rendered in 2.5 minutes.</span></div></div>
@@ -651,7 +665,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 
 <section class="scene s-static" id="static">
   <div class="wrap wide">
-    <span class="tag reveal" data-en="04 · STATIC" data-es="04 · ESTÁTICOS">04 · STATIC</span>
+    <span class="tag reveal" data-en="07 · STATIC" data-es="07 · ESTÁTICOS">07 · STATIC</span>
     <h2 class="reveal d2" data-en="Static ads and <em>carousels</em>" data-es="Anuncios fijos y <em>carruseles</em>">Static ads and <em>carousels</em></h2>
     <p class="reveal d3" data-en="Feed ads in 4:5 for Meta, built from the same product images and the same offers as the video ads, so every format tells one story." data-es="Anuncios de feed en 4:5 para Meta, hechos con las mismas fotos de producto y las mismas ofertas que los videos, para que todos los formatos cuenten una sola historia.">Feed ads in 4:5 for Meta, built from the same product images and the same offers as the video ads, so every format tells one story.</p>
     <div class="st-grid"><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/s-kineta-1.jpg" alt="KINETA · problem headline · offer badge"></div><figcaption data-en="KINETA · problem headline · offer badge" data-es="KINETA · titular de problema · oferta">KINETA · problem headline · offer badge</figcaption></figure><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/s-kineta-2.jpg" alt="KINETA · proof with real numbers"></div><figcaption data-en="KINETA · proof with real numbers" data-es="KINETA · prueba con cifras reales">KINETA · proof with real numbers</figcaption></figure><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/s-velyra-1.jpg" alt="VELYRA · comparison claim"></div><figcaption data-en="VELYRA · comparison claim" data-es="VELYRA · comparación directa">VELYRA · comparison claim</figcaption></figure><figure class="reveal"><div class="st-img"><img loading="lazy" decoding="async" src="ads/static/s-velyra-2.jpg" alt="VELYRA · benefit plus risk reversal"></div><figcaption data-en="VELYRA · benefit plus risk reversal" data-es="VELYRA · beneficio y garantía">VELYRA · benefit plus risk reversal</figcaption></figure></div>
@@ -662,7 +676,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 <section class="scene s-web" id="web">
   <div class="wrap wide">
     <div class="web-head">
-      <span class="tag reveal" data-en="05 · WEB" data-es="05 · WEB">05 · WEB</span>
+      <span class="tag reveal" data-en="08 · WEB" data-es="08 · WEB">08 · WEB</span>
       <h2 class="reveal d2" data-en="Landing <em>pages</em>" data-es="Páginas de <em>venta</em>">Landing <em>pages</em></h2>
       <p class="reveal d3" data-en="Cinematic product pages: video tied to scroll, dust transitions, live camera moves. This KINETA demo is fully coded and works on mobile." data-es="Páginas de producto cinematográficas: video ligado al scroll, transiciones en polvo y cámara en vivo. Esta demo de KINETA está programada a mano y funciona en el celular.">Cinematic product pages: video tied to scroll, dust transitions, live camera moves. This KINETA demo is fully coded and works on mobile.</p>
     </div>
@@ -723,7 +737,7 @@ video::-webkit-media-controls,video::-webkit-media-controls-enclosure,video::-we
 // ===== sonido real (grabaciones libres, afinadas a La=432 Hz) =====
 // Encendido por defecto. El navegador solo deja sonar tras el primer clic, toque o tecla: desde ahí todo es automático.
 // Los demás sonidos de cada sección solo ocurren mientras esa sección está en pantalla.
-const SND={on:true, unlocked:false, bed:null, duck:false, last:0, vol:0};
+const SND={on:false, unlocked:false, bed:null, duck:false, last:0, vol:0};
 function sfx(name,vol=.2,rate=1){ if(!SND.on||!SND.unlocked||SND.duck) return; const a=new Audio('sfx/'+name+'.mp3'); a.volume=Math.min(1,vol); a.preservesPitch=false; a.mozPreservesPitch=false; a.webkitPreservesPitch=false; a.playbackRate=rate; a.play().catch(()=>{}); }
 function unlock(){ SND.unlocked=true; }
 ['pointerdown','keydown','touchend'].forEach(ev=>addEventListener(ev,unlock,{once:true,capture:true}));
@@ -753,10 +767,10 @@ function setLang(l){lang=l;document.documentElement.lang=l;
 btn.onclick=()=>setLang(lang==='en'?'es':'en');
 
 // Partículas: forman palabras que se transforman con remolino; estela luminosa; ola de luz; tocar = onda expansiva
-const cv=document.getElementById('particles'), cx=cv.getContext('2d');
+const cv=document.getElementById('particles')||document.createElement('canvas'), cx=cv.getContext('2d');  // sección retirada 2026-11-10
 let STEP=4, P=[], mouse={x:-999,y:-999}, W, H, wordI=0, swirl=0, waves=[], visible=false, lastT=0;
 const WORDS={en:['AI','HOOK','SCALE','EN · ES'],es:['IA','GANCHO','VOLUMEN','ES · EN']};
-const COLS=['#c6ff3d','#8b5cf6','#22d3ee','#ff5a5f','#ffffff'];
+const COLS=['#ff6a3d','#8b5cf6','#22d3ee','#ff5a5f','#ffffff'];
 function sizeParticles(){W=cv.width=cv.offsetWidth*devicePixelRatio;H=cv.height=cv.offsetHeight*devicePixelRatio;drawWord();}
 function drawWord(){
   if(!W) return;
@@ -791,7 +805,7 @@ function tick(now){
     const z=Math.min(dpr*(1.6+p.r+lit*1.4), STEP*(.38+p.r*.06+lit*.2)); cx.fillRect(p.x-z/2,p.y-z/2,z,z);
   }
   cx.globalAlpha=1;
-  waves=waves.filter(w=>{ w.r+=14*dpr; w.f*=.94; cx.strokeStyle=`rgba(198,255,61,${w.f/12})`; cx.lineWidth=2*dpr; cx.beginPath(); cx.arc(w.x,w.y,w.r,0,7); cx.stroke(); return w.f>.3; });
+  waves=waves.filter(w=>{ w.r+=14*dpr; w.f*=.94; cx.strokeStyle=`rgba(255,106,61,${w.f/12})`; cx.lineWidth=2*dpr; cx.beginPath(); cx.arc(w.x,w.y,w.r,0,7); cx.stroke(); return w.f>.3; });
   cx.globalCompositeOperation='source-over';
 }
 function pt(e){const b=cv.getBoundingClientRect(),q=e.touches?e.touches[0]:e;mouse.x=(q.clientX-b.left)*devicePixelRatio;mouse.y=(q.clientY-b.top)*devicePixelRatio;}
@@ -845,19 +859,19 @@ const IN=.42, HOLD=2.3, OUT=.45;
 function dustLoop(now){ if(!dRun) return; requestAnimationFrame(dustLoop);
   const t=(now-dT0)/1000; dctx.clearRect(0,0,dW,dH); const sc=dW/1400;
   if(dPhase==='in'){ const ta=Math.min(1,Math.max(0,(t-IN*.5)/(IN*.5))), tE=ta*ta*(3-2*ta);   // el texto nítido aparece mientras el polvo llega: nunca se ve pixelado
-    dctx.fillStyle='#c6ff3d';
+    dctx.fillStyle='#ff6a3d';
     for(const p of DP){ const q=Math.min(1,Math.max(0,(t-p.k*.16)/(IN-.16))), e=1-Math.pow(1-q,3);
       dctx.globalAlpha=(.25+.75*e)*(1-tE*.95); dctx.fillRect(p.sx+(p.tx-p.sx)*e, p.sy+(p.ty-p.sy)*e, p.s, p.s); }
-    if(tE>0){ dctx.globalAlpha=tE; dctx.font=dFont; dctx.textAlign='center'; dctx.textBaseline='middle'; dctx.shadowColor='rgba(198,255,61,.45)'; dctx.shadowBlur=30*sc*tE; dctx.fillText(dText,dW/2,dH/2); dctx.shadowBlur=0; }
+    if(tE>0){ dctx.globalAlpha=tE; dctx.font=dFont; dctx.textAlign='center'; dctx.textBaseline='middle'; dctx.shadowColor='rgba(255,106,61,.45)'; dctx.shadowBlur=30*sc*tE; dctx.fillText(dText,dW/2,dH/2); dctx.shadowBlur=0; }
     dctx.globalAlpha=1; if(t>=IN){ dPhase='hold'; dT0=now; } }
-  else if(dPhase==='hold'){ dctx.font=dFont; dctx.textAlign='center'; dctx.textBaseline='middle'; dctx.shadowColor='rgba(198,255,61,.45)'; dctx.shadowBlur=30*sc;
-    dctx.fillStyle='#c6ff3d'; dctx.fillText(dText,dW/2,dH/2); dctx.shadowBlur=0;
+  else if(dPhase==='hold'){ dctx.font=dFont; dctx.textAlign='center'; dctx.textBaseline='middle'; dctx.shadowColor='rgba(255,106,61,.45)'; dctx.shadowBlur=30*sc;
+    dctx.fillStyle='#ff6a3d'; dctx.fillText(dText,dW/2,dH/2); dctx.shadowBlur=0;
     if(t>=HOLD){ dPhase='out'; dT0=now; } }
   else if(dPhase==='out'){ const ta=Math.max(0,1-t/.1);                                   // la letra nítida se va casi de inmediato
-    if(ta>0){ dctx.globalAlpha=ta; dctx.font=dFont; dctx.textAlign='center'; dctx.textBaseline='middle'; dctx.fillStyle='#c6ff3d'; dctx.fillText(dText,dW/2,dH/2); }
+    if(ta>0){ dctx.globalAlpha=ta; dctx.font=dFont; dctx.textAlign='center'; dctx.textBaseline='middle'; dctx.fillStyle='#ff6a3d'; dctx.fillText(dText,dW/2,dH/2); }
     for(const p of DP){ const q=Math.min(1,Math.max(0,(t-p.k*.07-p.w*.05)/(OUT-.12)));   // casi todos empiezan a la vez: la forma se rompe enseguida
       const e=Math.pow(q,.8), j=Math.sin(p.w*40+t*30)*(2+10*q)*sc;                         // temblor desde el primer instante para que no se lea
-      dctx.globalAlpha=(1-ta)*Math.pow(1-q,1.4); dctx.fillStyle=p.w>.82?'#ffffff':'#c6ff3d';
+      dctx.globalAlpha=(1-ta)*Math.pow(1-q,1.4); dctx.fillStyle=p.w>.82?'#ffffff':'#ff6a3d';
       const z=p.s*(1-.6*q); dctx.fillRect(p.tx+p.vx*e*140*sc+j, p.ty+p.vy*e*110*sc+Math.cos(p.w*30+t*24)*(1+6*q)*sc, z, z); }
     dctx.globalAlpha=1; if(t>=OUT){ si++; dustStart(SW[lang][si%SW[lang].length]); } } }
 function nextSwap(first){ swap.className='swap dusty'; if(first) si=0; dustStart(SW[lang][si%SW[lang].length]); }
@@ -987,6 +1001,7 @@ kslamAll();
 
 // toque suave al pasar por un anuncio o un formato
 if(matchMedia('(hover:hover)').matches) document.querySelectorAll('.adv').forEach(a=>a.addEventListener('mouseenter',()=>{ const n=performance.now(); if(n-SND.last<140) return; SND.last=n; sfx('tap',.06,1.35); }));
+(()=>{const h=document.getElementById('hire');const seen=new Set();const io=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));h&&h.classList.toggle('hide',seen.size>0);},{threshold:.15});['about','end'].forEach(id=>{const el=document.getElementById(id);el&&io.observe(el);});})();
 document.getElementById('moreAds').addEventListener('click',()=>{document.getElementById('grid').classList.add('all');});
 document.querySelectorAll('.fmt button,.olang button').forEach(b=>b.addEventListener('click',()=>sfx('tap',.14,1.15)));
 // los contadores suenan al empezar a subir
