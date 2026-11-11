@@ -614,7 +614,7 @@ h1,h2,h3,.mega,.slam,.swap{font-family:Archivo,Inter,sans-serif;font-stretch:112
       <p class="reveal d3" data-en="Short vertical ads for TikTok, Reels and Shorts. Voiceover, kinetic captions, music and a clear hook in the first seconds. No face needed." data-es="Anuncios verticales cortos para TikTok, Reels y Shorts. Voz, subtítulos animados, música y un gancho claro en los primeros segundos. Sin rostro.">Short vertical ads for TikTok, Reels and Shorts. Voiceover, kinetic captions, music and a clear hook in the first seconds. No face needed.</p>
     </div>
     <div class="reveal d2">
-      <div class="phone"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline id="olivo" src="ads/casa-olivo-en.mp4" poster="ads/casa-olivo-en.jpg" muted loop playsinline preload="none"></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
+      <div class="phone"><video disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" webkit-playsinline x5-playsinline id="olivo" src="ads/casa-olivo-en.mp4?v=20261110c" poster="ads/casa-olivo-en.jpg?v=20261110c" muted loop playsinline preload="none"></video><button class="snd2" type="button" aria-label="Sound">🔇</button></div>
       <div class="olang" id="olang"><button type="button" class="on" data-v="en">EN</button><button type="button" data-v="es">ES</button></div>
       <div class="phone-note" data-en="Real estate ad for a fictional property, in English and Spanish. Tap for sound." data-es="Anuncio inmobiliario para una propiedad ficticia, en inglés y español. Toca para oír.">Real estate ad for a fictional property, in English and Spanish. Tap for sound.</div>
     </div>
@@ -979,8 +979,8 @@ kslamAll();
 // Casa Olivo: cambiar entre inglés y español sin perder el punto del video
 (function(){ const v=document.getElementById('olivo'), box=document.getElementById('olang'); if(!v) return;
   box.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; box.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
-    const t=v.currentTime, m=v.muted, base=MOVIL?'ads/m/':'ads/'; v.poster='ads/casa-olivo'+(b.dataset.v==='en'?'-en':'')+'.jpg';
-    v.src=base+'casa-olivo'+(b.dataset.v==='en'?'-en':'')+'.mp4'; v.muted=m; v.addEventListener('loadedmetadata',()=>{ v.currentTime=t; v.play().catch(()=>{}); },{once:true}); }); })();
+    const t=v.currentTime, m=v.muted, base=MOVIL?'ads/m/':'ads/'; v.poster='ads/casa-olivo'+(b.dataset.v==='en'?'-en':'')+'.jpg?v=20261110c';
+    v.src=base+'casa-olivo'+(b.dataset.v==='en'?'-en':'')+'.mp4?v=20261110c'; v.muted=m; v.addEventListener('loadedmetadata',()=>{ v.currentTime=t; v.play().catch(()=>{}); },{once:true}); }); })();
 
 // selector de formato: cambia los 13 anuncios entre 9:16, 4:5, 1:1 y el corte de 6 s
 (function(){ const box=document.getElementById('fmt'), grid=document.getElementById('grid'); if(!box) return;
